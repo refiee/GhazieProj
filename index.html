@@ -6,78 +6,63 @@
 <title>دليل الرعاية الروحية للمريض المسلم</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--gr:#1B6B3A;--gr2:#145530;--grl:#e8f5ee;--gd:#E8B84B;--gdl:#fdf8ea;--bl:#1a4a8a;--bll:#e8f0fb;--tx:#1a1a1a;--bg:#fafaf8;--cd:#fff;--bd:#e0e0d8;--r:12px;--fz:1rem;--fa:'Amiri','Traditional Arabic',serif;--fl:'Inter',system-ui,sans-serif}
-[data-hc]{--bg:#fff;--cd:#f0f0ec;--tx:#000;--grl:#c8e8d0;--gdl:#f5ead0;--bll:#d0e4f8}
+:root{--gr:#1A5EA8;--gr2:#154d8c;--grl:#dceef9;--gd:#3A8FD0;--gdl:#eef6fd;--bl:#1A5EA8;--bll:#dceef9;--tx:#1a2a3a;--bg:#f5f9fd;--cd:#fff;--bd:#bdd6ee;--r:12px;--fz:1rem;--fa:'Amiri','Traditional Arabic',serif;--fl:'Inter',system-ui,sans-serif}
+[data-hc]{--bg:#fff;--cd:#f0f0ec;--tx:#000;--grl:#cce0f5;--gdl:#dceef9;--bll:#cce0f5}
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:var(--fz);scroll-behavior:smooth}
 body{font-family:var(--fl);background:var(--bg);color:var(--tx);min-height:100vh;line-height:1.7}
 [dir=rtl]{font-family:var(--fa)}
 .sc{display:none;min-height:100vh;flex-direction:column}
 .sc.on{display:flex}
-#s1{background:linear-gradient(160deg,#0a2e16,#1B6B3A 65%,#1e5530);align-items:center;justify-content:center;padding:2rem 1rem}
+#s1{background:linear-gradient(160deg,#071428,#0d3a7a 45%,#1A5EA8 100%);align-items:center;justify-content:center;padding:2rem 1rem}
 .s1w{width:100%;max-width:540px;text-align:center}
-.s1lg{width:80px;height:80px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin:0 auto 1.2rem;border:2px solid rgba(232,184,75,.5)}
-.s1t{color:var(--gd);font-family:var(--fa);font-size:1.55rem;font-weight:700;direction:rtl;margin-bottom:.3rem}
-.s1s{color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:1.75rem;font-family:var(--fl);direction:ltr}
+.s1lg{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;border:3px solid rgba(255,255,255,.4);overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.s1hosp{color:rgba(255,255,255,.9);font-family:var(--fa);font-size:1.05rem;direction:rtl;margin-bottom:.1rem}
+.s1hospsub{color:rgba(255,255,255,.5);font-size:.73rem;font-family:var(--fl);direction:ltr;letter-spacing:.06em;margin-bottom:1.1rem}
+.s1t{color:#fff;font-family:var(--fa);font-size:1.45rem;font-weight:700;direction:rtl;margin-bottom:.3rem}
+.s1s{color:rgba(255,255,255,.55);font-size:.82rem;margin-bottom:1.75rem;font-family:var(--fl);direction:ltr}
 .lgr{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
 @media(min-width:500px){.lgr{grid-template-columns:repeat(3,1fr)}}
 .lb{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--r);padding:.7rem .85rem;cursor:pointer;display:flex;align-items:center;gap:.6rem;color:#fff;font-size:.93rem;transition:all .2s;min-height:44px;width:100%;text-align:start}
-.lb:hover,.lb:focus{background:rgba(232,184,75,.25);border-color:var(--gd);outline:2px solid var(--gd);outline-offset:2px}
+.lb:hover,.lb:focus{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.75);outline:2px solid rgba(255,255,255,.55);outline-offset:2px}
 .lf{font-size:1.35rem;flex-shrink:0}
 .ln{font-weight:500}
-.tb{background:var(--gr);color:#fff;padding:.8rem 1rem;display:flex;align-items:center;gap:.6rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.tb{background:var(--gr);color:#fff;padding:.8rem 1rem;display:flex;align-items:center;gap:.6rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(26,94,168,.35)}
 .tb-bk{background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:.2rem .45rem;border-radius:6px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1}
 .tb-bk:hover{background:rgba(255,255,255,.15)}
 .tb-t{font-size:.97rem;font-weight:600;flex:1;text-align:start}
 .tb-c{display:flex;gap:.35rem;align-items:center}
 .cb{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:7px;padding:.25rem .45rem;cursor:pointer;font-size:.76rem;font-weight:600;min-height:44px;min-width:34px;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:var(--fl)!important}
 .cb:hover{background:rgba(255,255,255,.27)}
-.cb.on{background:var(--gd);color:#111;border-color:var(--gd)}
-.s2h{background:linear-gradient(135deg,var(--gr),#1e5530);padding:1.2rem;text-align:center;color:#fff}
-.s2b{font-family:var(--fa);font-size:1.05rem;color:rgba(255,255,255,.8);direction:rtl}
-.s2a{font-family:var(--fa);color:var(--gd);font-size:.88rem;direction:rtl;margin-top:.25rem}
-.tl{padding:.8rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.tc{background:var(--cd);border:1px solid var(--bd);border-radius:var(--r);padding:.85rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.85rem;box-shadow:0 2px 10px rgba(0,0,0,.07);transition:all .2s;min-height:64px}
-.tc:hover,.tc:focus{border-color:var(--gr);box-shadow:0 4px 16px rgba(27,107,58,.18);transform:translateY(-1px);outline:2px solid var(--gr);outline-offset:2px}
+.cb.on{background:#fff;color:var(--gr);border-color:#fff}
+.s2h{background:linear-gradient(135deg,var(--gr2),var(--gr));padding:1.5rem 1.2rem;text-align:center;color:#fff}
+.s2b{font-family:var(--fa);font-size:1.08rem;color:rgba(255,255,255,.95);direction:rtl}
+.s2a{font-family:var(--fa);color:rgba(255,255,255,.65);font-size:.88rem;direction:rtl;margin-top:.3rem}
+.tl{padding:.8rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.tc{background:var(--cd);border:1px solid var(--bd);border-radius:var(--r);padding:.85rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.85rem;box-shadow:0 1px 8px rgba(26,94,168,.08);transition:all .22s;min-height:64px}
+.tc:hover,.tc:focus{border-color:var(--gr);box-shadow:0 4px 18px rgba(26,94,168,.16);transform:translateY(-2px);outline:2px solid var(--gr);outline-offset:2px}
 .tic{width:44px;height:44px;background:var(--grl);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
 .tn{width:24px;height:24px;background:var(--gr);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;font-family:var(--fl)!important}
 .ti{flex:1;min-width:0}
 .tt{font-size:.95rem;font-weight:600;line-height:1.4;color:var(--tx)}
-.ta{color:#bbb;font-size:.9rem;flex-shrink:0}
+.ta{color:#8aabcc;font-size:.9rem;flex-shrink:0}
 [dir=rtl] .ta{transform:scaleX(-1)}
-#s3{padding-bottom:90px}
-.cw{padding:.85rem;max-width:760px;margin:0 auto}
-.bk{background:var(--cd);border-radius:var(--r);padding:1.1rem;margin-bottom:.85rem;border:1px solid var(--bd);line-height:1.95;font-size:1.04rem}
-.bk-i{background:#f8f8f5;border-color:#ddd}
-.bk-r{border-inline-start:4px solid var(--bl);background:var(--bll)}
-.bk-h{border-inline-start:4px solid var(--gr);background:var(--grl)}
-.bk-v{border:2px solid var(--gd);background:var(--gdl);text-align:center;font-size:1.1rem;font-style:italic}
-.bk-c{border-inline-start:3px dashed var(--gr);background:#f4fbf6;padding-inline-start:1.3rem}
-.btp{display:block;font-size:.67rem;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:.4rem;font-family:var(--fl)!important}
-.htx{color:#1a4a1a;font-weight:600}
-.vtx{color:#6a3a00;font-weight:500}
-.hl{background:var(--gd);border-radius:3px;padding:0 2px}
-.ab{position:fixed;bottom:0;left:0;right:0;background:var(--cd);border-top:1px solid var(--bd);padding:.6rem .85rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 -4px 14px rgba(0,0,0,.1);z-index:200}
-.abt{background:var(--gr);border:none;color:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0;transition:all .2s}
-.abt:hover{background:var(--gr2)}
-.abt.s{background:#f0f0ea;color:var(--tx);border-radius:8px;width:auto;padding:0 .7rem;font-size:.8rem;font-weight:600}
-.abt.s:hover{background:#e4e4dc}
-.ap{flex:1;display:flex;flex-direction:column;gap:.22rem;min-width:0}
-.al{font-size:.7rem;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--fl)!important}
-.ab-i{height:4px;background:#e4e4dc;border-radius:2px;overflow:hidden}
-.af{height:100%;background:var(--gr);border-radius:2px;width:0%;transition:width .35s}
-.sp{background:#f0f0ea;border:1px solid var(--bd);border-radius:6px;padding:0 .45rem;cursor:pointer;font-size:.78rem;font-weight:700;min-height:44px;min-width:42px;display:flex;align-items:center;justify-content:center;color:var(--tx);font-family:var(--fl)!important}
-.sp:hover{background:#e4e4dc}
-.nv{background:#fff3e0;border:1px solid #ffb74d;border-radius:8px;padding:.7rem 1rem;font-size:.83rem;color:#7a4100;margin:.5rem .85rem;display:none}
+.cw{padding:1.1rem .9rem 2rem;max-width:760px;margin:0 auto}
+.pp{margin-bottom:1.3rem;font-size:1.04rem;line-height:2.1;color:var(--tx)}
+.pp:last-child{margin-bottom:0}
+.ph{margin:1.2rem 0;padding:1rem 1.2rem;border-inline-start:3px solid var(--gr);background:var(--grl);border-radius:0 var(--r) var(--r) 0;font-size:1.04rem;line-height:2.1;color:#0c2d55}
+.pv{margin:1.3rem 0;padding:1.1rem 1.35rem;background:var(--gdl);border-radius:var(--r);text-align:center;font-size:1.08rem;line-height:2.1;border:1px solid var(--bd);color:#0c2d55;font-style:italic}
 :focus-visible{outline:2px solid var(--gd);outline-offset:2px}
-@media(max-width:380px){.tb-t{font-size:.87rem}.bk{padding:.875rem}}
+@media(max-width:380px){.tb-t{font-size:.87rem}.pp,.ph,.pv{font-size:.97rem}}
 </style>
 </head>
 <body>
 
 <div id="s1" class="sc on" role="main" aria-label="Language Selection">
   <div class="s1w">
-    <div class="s1lg" aria-hidden="true">☪</div>
+    <div class="s1lg" aria-hidden="true"><img src="download.jpg" style="width:80px;height:80px;object-fit:contain;" alt="شعار تجمع المدينة المنورة الصحي"></div>
+    <div class="s1hosp">مستشفى ينبع العام</div>
+    <div class="s1hospsub">Yanbu General Hospital</div>
     <div class="s1t">دليل الرعاية الروحية للمريض المسلم</div>
     <div class="s1s" dir="ltr">Spiritual Care Guide · Select your language</div>
     <div class="lgr" id="lgr" role="list"></div>
@@ -110,17 +95,7 @@ body{font-family:var(--fl);background:var(--bg);color:var(--tx);min-height:100vh
       <button class="cb" onclick="adjF(1)" aria-label="Larger text">A+</button>
     </div>
   </div>
-  <div id="nv" class="nv"></div>
   <div class="cw" id="cb"></div>
-  <div class="ab" role="region" aria-label="Audio controls">
-    <button class="abt" id="pb" onclick="togPlay()" aria-label="Play">▶</button>
-    <button class="abt s" onclick="stopAu()" aria-label="Stop">■</button>
-    <div class="ap">
-      <div class="al" id="al">—</div>
-      <div class="ab-i"><div class="af" id="af"></div></div>
-    </div>
-    <button class="sp" id="spb" onclick="cycSpd()" aria-label="Speed">1×</button>
-  </div>
 </div>
 
 <script>
@@ -137,8 +112,6 @@ const LG={
   tr:{n:'Türkçe',f:'🇹🇷',d:'ltr',v:'tr-TR'}
 };
 let CL='ar',CT=0,FL=1,HC=false;
-const SPS=[0.75,1,1.25,1.5,2];
-let SI=1,utter=null,playing=false,wSpans=[],wIdx=0,totW=0;
 
 /* ====== CONTENT DATA — inserted by step 2-4 ====== */
 const TP=/*TOPICS_START*/[
@@ -219,8 +192,8 @@ const r=document.getElementById('root');
 r.setAttribute('lang',CL);
 r.setAttribute('dir',LG[CL].d);
 }
-function goLang(){stopAu();show('s1')}
-function goTop(){stopAu();show('s2')}
+function goLang(){show('s1')}
+function goTop(){show('s2')}
 function selLang(l){CL=l;buildS2();show('s2')}
 function selTop(i){CT=i;buildS3();show('s3')}
 
@@ -260,85 +233,10 @@ function buildS3(){
   const cb=document.getElementById('cb');
   cb.innerHTML=t.blocks.map((b,bi)=>{
     const txt=b.text[CL]||b.text.ar;
-    const lbl={i:'Introduction',r:'Rule',h:'Hadith',v:'Verse',c:'Case'}[b.type]||'';
-    const cls={i:'bk-i',r:'bk-r',h:'bk-h',v:'bk-v',c:'bk-c'}[b.type]||'bk-i';
-    const inner=b.type==='h'?`<span class="htx">${txt}</span>`:
-                 b.type==='v'?`<span class="vtx">${txt}</span>`:txt;
-    return `<div class="bk ${cls}" id="b${bi}">
-      <span class="btp">${lbl}</span>
-      <div class="btxt">${inner}</div>
-    </div>`;
+    if(b.type==='v') return `<div class="pv" id="b${bi}">${txt}</div>`;
+    if(b.type==='h') return `<div class="ph" id="b${bi}">${txt}</div>`;
+    return `<p class="pp" id="b${bi}">${txt}</p>`;
   }).join('');
-  buildAudio();
-}
-
-/* ====== AUDIO ====== */
-function getTopicText(){
-  const t=TP[CT];
-  return t.blocks.map(b=>b.text[CL]||b.text.ar).join(' ');
-}
-function buildAudio(){
-  document.getElementById('al').textContent=
-    (TP[CT]?.title[CL]||TP[CT]?.title.ar)||'';
-  document.getElementById('pb').textContent='▶';
-  document.getElementById('af').style.width='0%';
-  playing=false;
-}
-function togPlay(){
-  if(!window.speechSynthesis){showNoVoice();return;}
-  if(playing){window.speechSynthesis.pause();playing=false;document.getElementById('pb').textContent='▶';}
-  else{
-    if(utter&&window.speechSynthesis.paused){window.speechSynthesis.resume();playing=true;document.getElementById('pb').textContent='⏸';return;}
-    startAudio();
-  }
-}
-function startAudio(){
-  stopAu();
-  const txt=getTopicText();
-  if(!txt)return;
-  utter=new SpeechSynthesisUtterance(txt);
-  utter.lang=LG[CL].v;
-  utter.rate=SPS[SI];
-  const words=txt.split(/\s+/).filter(Boolean);
-  totW=words.length;wIdx=0;
-  utter.onboundary=e=>{
-    if(e.name==='word'){
-      document.querySelectorAll('.hl').forEach(x=>x.classList.remove('hl'));
-      const pct=Math.round((wIdx/totW)*100);
-      document.getElementById('af').style.width=pct+'%';
-      wIdx++;
-    }
-  };
-  utter.onend=()=>{playing=false;document.getElementById('pb').textContent='▶';document.getElementById('af').style.width='100%';};
-  utter.onerror=()=>{playing=false;document.getElementById('pb').textContent='▶';showNoVoice();};
-  window.speechSynthesis.speak(utter);
-  playing=true;document.getElementById('pb').textContent='⏸';
-}
-function stopAu(){
-  if(window.speechSynthesis)window.speechSynthesis.cancel();
-  utter=null;playing=false;
-  document.getElementById('pb').textContent='▶';
-  document.getElementById('af').style.width='0%';
-}
-function cycSpd(){SI=(SI+1)%SPS.length;
-  if(utter)utter.rate=SPS[SI];
-  document.getElementById('spb').textContent=SPS[SI]+'×';
-}
-function showNoVoice(){
-  const nv=document.getElementById('nv');
-  nv.style.display='block';
-  nv.textContent={
-    ar:'الصوت غير متاح في هذا المتصفح. حاول فتح الصفحة في متصفح آخر.',
-    en:'Audio not available in this browser. Try another browser.',
-    ur:'اس براؤزر میں آواز دستیاب نہیں۔',
-    fa:'صدا در این مرورگر در دسترس نیست.',
-    fr:'Audio indisponible dans ce navigateur.',
-    hi:'इस ब्राउज़र में ऑडियो उपलब्ध नहीं।',
-    bn:'এই ব্রাউজারে অডিও নেই।',
-    id:'Audio tidak tersedia di browser ini.',
-    ms:'Audio tidak tersedia di pelayar ini.',
-    tr:'Bu tarayıcıda ses mevcut değil.'
-  }[CL]||'Audio not available.';
 }
 
 /* ====== INIT ====== */
