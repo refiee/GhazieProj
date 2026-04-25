@@ -232,9 +232,10 @@ function buildS3(){
   document.getElementById('s3t').textContent=t.title[CL]||t.title.ar;
   const cb=document.getElementById('cb');
   cb.innerHTML=t.blocks.map((b,bi)=>{
-    const txt=b.text[CL]||b.text.ar;
+    let txt=b.text[CL]||b.text.ar;
     if(b.type==='v') return `<div class="pv" id="b${bi}">${txt}</div>`;
     if(b.type==='h') return `<div class="ph" id="b${bi}">${txt}</div>`;
+    if(b.type==='r') txt=txt.replace(/([.»۔])\s+([١-٩۰-۹१-९১-৯\d]+[ـ.۔])/g,'$1<br><br>$2');
     return `<p class="pp" id="b${bi}">${txt}</p>`;
   }).join('');
 }
