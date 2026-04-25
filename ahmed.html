@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html id="root" lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="أحكام صلاة المريض وطهارته - Spiritual Care Guide">
+<title>دليل الرعاية الروحية للمريض المسلم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1B6B3A;--green2:#145530;--greenl:#e8f5ee;--gold:#E8B84B;--goldl:#fdf8ea;--blue:#1a4a8a;--bluel:#e8f0fb;--txt:#1a1a1a;--bg:#fafaf8;--card:#fff;--bdr:#e0e0d8;--shd:0 2px 12px rgba(0,0,0,.08);--r:12px;--fz:1rem;--far:'Amiri','Traditional Arabic',Georgia,serif;--flat:'Inter',system-ui,sans-serif}
+[data-hc="1"]{--bg:#fff;--card:#f0f0ec;--txt:#000;--greenl:#c8e8d0;--goldl:#f5ead0;--bluel:#d0e4f8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fz);scroll-behavior:smooth}
+body{font-family:var(--flat);background:var(--bg);color:var(--txt);min-height:100vh;line-height:1.7}
+[dir="rtl"]{font-family:var(--far)}
+.screen{display:none;min-height:100vh;flex-direction:column}
+.screen.on{display:flex}
+/* S1 lang */
+#s1{background:linear-gradient(160deg,#0a2e16 0%,#1B6B3A 65%,#1e5530 100%);align-items:center;justify-content:center;padding:2rem 1rem}
+.s1w{width:100%;max-width:540px;text-align:center}
+.s1logo{width:80px;height:80px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1.2rem;border:2px solid rgba(232,184,75,.5)}
+.s1t{color:var(--gold);font-family:var(--far);font-size:1.6rem;font-weight:700;direction:rtl;margin-bottom:.25rem}
+.s1s{color:rgba(255,255,255,.7);font-size:.875rem;margin-bottom:1.75rem;font-family:var(--flat)}
+.lgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:.625rem}
+@media(min-width:520px){.lgrid{grid-template-columns:repeat(3,1fr)}}
+.lbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--r);padding:.75rem .875rem;cursor:pointer;display:flex;align-items:center;gap:.625rem;color:#fff;font-size:.95rem;transition:all .2s;min-height:44px;text-align:left;width:100%}
+.lbtn:hover,.lbtn:focus{background:rgba(232,184,75,.25);border-color:var(--gold);outline:2px solid var(--gold);outline-offset:2px}
+.lflag{font-size:1.4rem;flex-shrink:0}
+.lname{font-weight:500}
+/* topbar */
+.tb{background:var(--green);color:#fff;padding:.875rem 1rem;display:flex;align-items:center;gap:.625rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.tb-bk{background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:.25rem .5rem;border-radius:6px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1}
+.tb-bk:hover{background:rgba(255,255,255,.15)}
+.tb-t{font-size:1rem;font-weight:600;flex:1;text-align:start}
+.tb-c{display:flex;gap:.4rem;align-items:center}
+.cbtn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:7px;padding:.3rem .5rem;cursor:pointer;font-size:.78rem;font-weight:600;min-height:44px;min-width:36px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.cbtn:hover{background:rgba(255,255,255,.28)}
+.cbtn.on{background:var(--gold);color:#111;border-color:var(--gold)}
+/* S2 topic list */
+.s2h{background:linear-gradient(135deg,var(--green) 0%,#1e5530 100%);padding:1.25rem;text-align:center;color:#fff}
+.s2b{font-family:var(--far);font-size:1.05rem;color:rgba(255,255,255,.8);direction:rtl}
+.s2a{font-family:var(--far);color:var(--gold);font-size:.9rem;direction:rtl;margin-top:.25rem}
+.tlist{padding:.875rem;display:flex;flex-direction:column;gap:.625rem;flex:1}
+.tcard{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:.875rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.875rem;box-shadow:var(--shd);transition:all .2s;min-height:66px;text-decoration:none;color:inherit}
+.tcard:hover,.tcard:focus{border-color:var(--green);box-shadow:0 4px 16px rgba(27,107,58,.18);transform:translateY(-1px);outline:2px solid var(--green);outline-offset:2px}
+.ticon{width:46px;height:46px;background:var(--greenl);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.tnum{width:26px;height:26px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;font-family:var(--flat)}
+.tinfo{flex:1;min-width:0}
+.ttl{font-size:.975rem;font-weight:600;line-height:1.4;color:var(--txt)}
+.tarw{color:#aaa;font-size:1rem;flex-shrink:0}
+[dir="rtl"] .tarw{transform:scaleX(-1)}
+/* S3 content */
+#s3{padding-bottom:96px}
+.cw{padding:.875rem;max-width:780px;margin:0 auto}
+.blk{background:var(--card);border-radius:var(--r);padding:1.125rem;margin-bottom:.875rem;border:1px solid var(--bdr);line-height:1.95;font-size:1.05rem;position:relative}
+.blk-intro{background:#f8f8f5}
+.blk-rule{border-inline-start:4px solid var(--blue);background:var(--bluel)}
+.blk-hadith{border-inline-start:4px solid var(--green);background:var(--greenl)}
+.blk-verse{border:2px solid var(--gold);background:var(--goldl);text-align:center;font-size:1.12rem}
+.blk-case{border-inline-start:3px dashed var(--green);background:#f4fbf6;padding-inline-start:1.375rem}
+.blk-type{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:.4rem;font-family:var(--flat)!important}
+.htxt{color:#1a4a1a;font-weight:600}
+.vtxt{color:#6a3a00;font-weight:500}
+.word{display:inline}
+.hl{background:var(--gold);border-radius:3px;padding:0 2px}
+/* audio bar */
+.abar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--bdr);padding:.625rem .875rem;display:flex;align-items:center;gap:.625rem;box-shadow:0 -4px 16px rgba(0,0,0,.1);z-index:200}
+.abtn{background:var(--green);border:none;color:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0;transition:all .2s}
+.abtn:hover{background:var(--green2)}
+.abtn.sec{background:#f0f0ea;color:var(--txt);border-radius:8px;width:auto;padding:0 .75rem;font-size:.82rem;font-weight:600}
+.abtn.sec:hover{background:#e4e4dc}
+.aprog{flex:1;display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.albl{font-size:.72rem;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--flat)!important}
+.abar-in{height:4px;background:#e4e4dc;border-radius:2px;overflow:hidden}
+.afill{height:100%;background:var(--green);border-radius:2px;width:0%;transition:width .4s}
+.spdbtn{background:#f0f0ea;border:1px solid var(--bdr);border-radius:6px;padding:0 .5rem;cursor:pointer;font-size:.8rem;font-weight:700;min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;color:var(--txt);font-family:var(--flat)!important}
+.spdbtn:hover{background:#e4e4dc}
+.novoice{background:#fff3e0;border:1px solid #ffb74d;border-radius:8px;padding:.75rem;font-size:.85rem;color:#7a4100;margin:.5rem .875rem}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(max-width:380px){.tb-t{font-size:.87rem}.blk{padding:.875rem}}
+</style>
+</head>
+<body>
+
+<div id="s1" class="screen on" role="main" aria-label="Language Selection">
+  <div class="s1w">
+    <div class="s1logo" aria-hidden="true">☪</div>
+    <div class="s1t">دليل الرعاية الروحية للمريض المسلم</div>
+    <div class="s1s" dir="ltr">Spiritual Care Guide · Select your language</div>
+    <div class="lgrid" id="lgrid" role="list"></div>
+  </div>
+</div>
+
+<div id="s2" class="screen" role="main" aria-label="Topics">
+  <div class="tb">
+    <button class="tb-bk" onclick="goLang()" aria-label="Back">‹</button>
+    <div class="tb-t" id="s2t"></div>
+    <div class="tb-c">
+      <button class="cbtn" onclick="adjFont(-1)" aria-label="Smaller text">A−</button>
+      <button class="cbtn" onclick="adjFont(1)" aria-label="Larger text">A+</button>
+      <button class="cbtn" id="hcbtn" onclick="toggleHC()" aria-label="High contrast">◑</button>
+    </div>
+  </div>
+  <div class="s2h">
+    <div class="s2b">أحكام صلاة المريض وطهارته</div>
+    <div class="s2a">الشيخ عبدالعزيز بن عبدالله بن باز رحمه الله</div>
+  </div>
+  <div class="tlist" id="tlist" role="list"></div>
+</div>
+
+<div id="s3" class="screen" role="main" aria-label="Content">
+  <div class="tb">
+    <button class="tb-bk" onclick="goTopics()" aria-label="Back">‹</button>
+    <div class="tb-t" id="s3t"></div>
+    <div class="tb-c">
+      <button class="cbtn" onclick="adjFont(-1)" aria-label="Smaller text">A−</button>
+      <button class="cbtn" onclick="adjFont(1)" aria-label="Larger text">A+</button>
+    </div>
+  </div>
+  <div class="cw" id="cbody"></div>
+  <div class="abar" role="region" aria-label="Audio controls">
+    <button class="abtn" id="playbtn" onclick="togglePlay()" aria-label="Play">▶</button>
+    <button class="abtn sec" onclick="stopAudio()" aria-label="Stop">■ Stop</button>
+    <div class="aprog">
+      <div class="albl" id="albl">—</div>
+      <div class="abar-in"><div class="afill" id="afill"></div></div>
+    </div>
+    <button class="spdbtn" id="spdbtn" onclick="cycleSpd()" aria-label="Speed">1×</button>
+  </div>
+</div>
+
+<script>
+const LANGS={
+  ar:{n:'العربية',f:'🇸🇦',d:'rtl',v:'ar-SA'},
+  ur:{n:'اردو',f:'🇵🇰',d:'rtl',v:'ur-PK'},
+  fa:{n:'فارسی',f:'🇮🇷',d:'rtl',v:'fa-IR'},
+  en:{n:'English',f:'🇬🇧',d:'ltr',v:'en-US'},
+  fr:{n:'Français',f:'🇫🇷',d:'ltr',v:'fr-FR'},
+  hi:{n:'हिन्दी',f:'🇮🇳',d:'ltr',v:'hi-IN'},
+  bn:{n:'বাংলা',f:'🇧🇩',d:'ltr',v:'bn-BD'},
+  id:{n:'Indonesia',f:'🇮🇩',d:'ltr',v:'id-ID'},
+  ms:{n:'Melayu',f:'🇲🇾',d:'ltr',v:'ms-MY'},
+  tr:{n:'Türkçe',f:'🇹🇷',d:'ltr',v:'tr-TR'}
+};
+
+const ICONS=['🕌','🤲','🏥','🙏','⏰','📿','💚'];
+
+const T=(o)=>o;
+
+const TOPICS=[
+{id:1,icon:'🕌',
+title:T({ar:'مقدمة وأحكام الطهارة والاستنجاء',ur:'مقدمہ اور طہارت و استنجاء کے احکام',fa:'مقدمه و احکام طهارت و استنجاء',en:'Introduction & Rules of Purification',fr:'Introduction et règles de purification',hi:'परिचय और पवित्रता के नियम',bn:'ভূমিকা ও পবিত্রতার বিধান',id:'Pendahuluan & Hukum Bersuci',ms:'Pendahuluan & Hukum Bersuci',tr:'Giriş ve Temizlik Hükümleri'}),
+blocks:[
+{type:'intro',text:T({
+ar:'الحمد لله رب العالمين، والصلاة والسلام على أشرف الأنبياء والمرسلين نبينا محمد وعلى آله وصحبه أجمعين وبعد فهذه كلمة مختصرة تتعلق ببعض أحكام طهارة المريض وصلاته.',
+en:'All praise is due to Allah, Lord of the worlds. Peace and blessings upon our Prophet Muhammad ﷺ, his family and companions. This is a brief guide on some rulings of purification and prayer for the sick.',
+ur:'تمام تعریف اللہ کے لیے ہے۔ نبی محمد ﷺ، آپ کی آل اور صحابہ پر درود و سلام۔ یہ بیمار کی طہارت اور نماز کے بعض احکام پر مختصر رہنمائی ہے۔',
+fa:'ستایش خداوند جهانیان را. درود و سلام بر پیامبر ما محمد ﷺ، آل و یارانش. این راهنمایی کوتاهی است درباره برخی احکام طهارت و نماز بیمار.',
+fr:'Louange à Allah, Seigneur des mondes. Paix sur le Prophète Muhammad ﷺ. Ce guide traite de quelques règles de purification et de prière pour le malade.',
+hi:'सभी प्रशंसा अल्लाह के लिए है। नबी मुहम्मद ﷺ पर दरूद व सलाम। यह बीमार की पवित्रता और नमाज़ के कुछ नियमों पर संक्षिप्त मार्गदर्शिका है।',
+bn:'সকল প্রশংসা আল্লাহর। নবী মুহাম্মাদ ﷺ-এর উপর দরূদ। এটি রোগীর পবিত্রতা ও নামাযের বিধান সম্পর্কিত সংক্ষিপ্ত নির্দেশিকা।',
+id:'Segala puji bagi Allah. Shalawat atas Nabi Muhammad ﷺ. Ini panduan singkat hukum bersuci dan shalat bagi orang sakit.',
+ms:'Segala puji bagi Allah. Selawat atas Nabi Muhammad ﷺ. Ini panduan ringkas hukum bersuci dan solat bagi orang sakit.',
+tr:'Hamd Allah\'a aittir. Peygamberimiz Muhammed ﷺ\'e salat ve selam. Bu, hasta için temizlik ve namaz hükümlerine dair kısa bir rehberdir.'
+})},
+{type:'rule',text:T({
+ar:'لقد شرع الله سبحانه وتعالى الطهارة لكل صلاة، فإن رفع الحدث وإزالة النجاسة ـ سواء كانت في البدن أو الثوب أو المكان المصلى فيه ـ شرطان من شروط الصلاة. فإذا أراد المسلم الصلاة وجب عليه أن يتوضأ من الحدث الأصغر، أو يغتسل إن كان حدثه أكبر. ولابد قبل الوضوء من الاستنجاء بالماء أو الاستجمار بالحجارة في حق من بال أو أتى الغائط لتتم الطهارة والنظافة.',
+en:'Allah has prescribed purification for every prayer. Removing minor impurity (hadath) and filth (najas) — whether on the body, clothes, or place of prayer — are conditions for the validity of prayer. When a Muslim wishes to pray, he must perform wudu (ablution) from minor impurity, or ghusl (full bath) if his impurity is major. Before wudu, one must perform istinja (cleansing with water) or istijmar (using stones) after urinating or defecating.',
+ur:'اللہ نے ہر نماز کے لیے طہارت فرض کی ہے۔ حدث کا ازالہ اور نجاست کو دور کرنا — چاہے بدن میں ہو، کپڑوں میں یا نماز کی جگہ — نماز کی شرائط میں سے ہیں۔ نماز کا ارادہ رکھنے والے مسلمان پر وضو یا غسل واجب ہے۔ بول و براز کے بعد وضو سے پہلے پانی سے استنجاء یا پتھروں سے استجمار ضروری ہے۔',
+fa:'خداوند برای هر نماز طهارت را واجب کرده است. رفع حدث و ازاله نجاست — چه در بدن، لباس یا محل نماز — از شرایط نماز است. مسلمانی که می‌خواهد نماز بخواند باید وضو بگیرد یا غسل کند. قبل از وضو، استنجاء با آب یا استجمار با سنگ برای کسی که بول یا غائط کرده واجب است.',
+fr:'Allah a prescrit la purification pour toute prière. Lever l\'impureté (hadath) et éliminer la souillure (najas) — sur le corps, les vêtements ou le lieu de prière — sont des conditions. Avant la prière, le musulman doit faire le wudu ou le ghusl. Avant le wudu, l\'istinja (nettoyage à l\'eau) ou l\'istijmar (pierres) est requis après les besoins.',
+hi:'अल्लाह ने हर नमाज़ के लिए पवित्रता अनिवार्य की है। हदस (नापाकी) दूर करना और नजासत मिटाना — चाहे बदन पर हो, कपड़ों पर या नमाज़ की जगह — नमाज़ की शर्तें हैं। नमाज़ के इरादे पर वुज़ू या गुस्ल जरूरी है। पेशाब/पाखाने के बाद वुज़ू से पहले पानी से इस्तिन्जा या पत्थरों से इस्तिजमार ज़रूरी है।',
+bn:'আল্লাহ প্রতিটি নামাযের জন্য পবিত্রতা ফরয করেছেন। হাদাস দূর করা এবং নাজাসাত সাফ করা — শরীরে, কাপড়ে বা নামাযের জায়গায় — নামাযের শর্ত। নামাযের ইচ্ছায় ওযু বা গোসল ওয়াজিব। পেশাব/পায়খানার পর ওযুর আগে পানি দিয়ে ইস্তিঞ্জা বা পাথর দিয়ে ইস্তিজমার আবশ্যক।',
+id:'Allah mewajibkan bersuci untuk setiap shalat. Menghilangkan hadats dan najis — pada badan, pakaian, atau tempat shalat — adalah syarat shalat. Muslim yang hendak shalat wajib berwudu atau mandi junub. Sebelum wudu, istinja dengan air atau istijmar dengan batu wajib bagi yang buang air.',
+ms:'Allah mewajibkan bersuci untuk setiap solat. Mengangkat hadas dan menghilangkan najis — pada badan, pakaian, atau tempat solat — adalah syarat solat. Muslim yang hendak solat wajib berwudu atau mandi junub. Sebelum wudu, istinja dengan air atau istijmar dengan batu wajib bagi yang buang air.',
+tr:'Allah her namaz için temizliği farz kılmıştır. Hadesi gidermek ve necaseti temizlemek — bedende, elbisede veya namaz yerinde — namazın şartlarındandır. Namaz kılmak isteyen müslüman abdest veya gusül yapmalıdır. Abdest öncesinde bevl veya büyük abdesten sonra su ile istinca veya taşla istijmar gerekir.'
+})},
+{type:'rule',text:T({
+ar:'فالاستنجاء بالماء واجب لكل خارج من السبيلين كالبول والغائط وليس على من نام أو خرجت منه ريح إنما عليه الوضوء لأن الاستنجاء إنما شرع لإزالة النجاسة، ولا نجاسة هاهنا. والاستجمار يقوم مقام الاستنجاء بالماء، ويكون بالحجارة أو ما يقوم مقامها، ولابد فيه من ثلاثة أحجار طاهرة.',
+en:'Istinja with water is obligatory for everything exiting the two passages (urine, stool). It is not required for passing gas or sleeping — only wudu is needed — since istinja is legislated to remove physical filth and there is none in those cases. Istijmar (using stones or similar materials) takes the place of water and requires at least three pure stones.',
+ur:'پانی سے استنجاء ہر اس چیز پر واجب ہے جو دونوں راستوں (پیشاب و براز) سے نکلے۔ نیند یا ہوا خارج ہونے پر صرف وضو کافی ہے کیونکہ وہاں کوئی نجاست نہیں۔ استجمار پتھروں یا اس کے قائم مقام چیز سے ہوتا ہے اور کم از کم تین پاک پتھر ضروری ہیں۔',
+fa:'استنجاء با آب برای هر چیزی که از دو راه خارج می‌شود واجب است. برای خوابیدن یا خارج شدن باد، فقط وضو کافی است. استجمار جای استنجاء با آب را می‌گیرد و باید با سه سنگ پاک باشد.',
+fr:'L\'istinja à l\'eau est obligatoire pour tout ce qui sort des deux voies. Pour le vent ou le sommeil, seul le wudu suffit. L\'istijmar (avec pierres ou équivalent) remplace l\'eau, et trois pierres pures sont requises au minimum.',
+hi:'पानी से इस्तिन्जा दोनों रास्तों से निकलने वाली हर चीज़ पर वाजिब है। नींद या हवा निकलने पर सिर्फ वुज़ू काफी है। इस्तिजमार पत्थरों या उनके बराबर चीज़ से किया जाता है, कम से कम तीन पाक पत्थर ज़रूरी हैं।',
+bn:'পানি দিয়ে ইস্তিঞ্জা দুই রাস্তা থেকে বের হওয়া সবকিছুর জন্য ওয়াজিব। ঘুম বা বায়ু নির্গমনে শুধু ওযু যথেষ্ট। ইস্তিজমার পাথর বা সমপর্যায়ের বস্তু দিয়ে করা যায়, কমপক্ষে তিনটি পাক পাথর লাগবে।',
+id:'Istinja dengan air wajib untuk segala yang keluar dari dua jalan. Untuk kentut atau tidur, cukup wudu saja. Istijmar dengan batu atau yang setara menggantikan air, minimum tiga batu suci.',
+ms:'Istinja dengan air wajib bagi segala yang keluar dari dua jalan. Untuk angin atau tidur, cukup wudu sahaja. Istijmar dengan batu atau yang setara menggantikan air, minimum tiga batu suci.',
+tr:'Suyla istinca, iki yoldan çıkan her şey için vaciptir. Yellenme veya uyku için yalnızca abdest yeterlidir. Taşla veya benzeriyle istijmar suyun yerine geçer; en az üç temiz taş şarttır.'
+})},
+{type:'hadith',text:T({
+ar:'لما ثبت عن النبي ﷺ أنه قال: «من استجمر فليوتر» ولقوله أيضاً: «إذا ذهب أحدكم إلى الغائط فليذهب معه بثلاثة أحجار، فإنها تجزىء عنه» رواه أبو داود. ولنهيه عن الاستجمار بأقل من ثلاثة أحجار (رواه مسلم). ولا يجوز الاستجمار بالروث والعظام والطعام، وكل ما له حرمة.',
+en:'The Prophet ﷺ said: "Whoever cleans himself with stones, let him use an odd number." And: "When one of you goes to relieve himself, let him take three stones, for they will suffice." [Abu Dawud] He also forbade using fewer than three stones [Muslim]. It is not permissible to use dung, bones, food, or anything sacred.',
+ur:'نبی ﷺ نے فرمایا: «جو استجمار کرے وہ طاق استعمال کرے» اور فرمایا: «جب تم میں سے کوئی قضائے حاجت کو جائے تو تین پتھر ساتھ لے جائے، یہ اسے کافی ہوں گے» [ابو داؤد]۔ اور تین سے کم کرنے سے منع فرمایا [مسلم]۔ گوبر، ہڈی، کھانا یا قابل احترام چیز سے استجمار جائز نہیں۔',
+fa:'پیامبر ﷺ فرمود: «هرکه استجمار کند، فرد استفاده کند» و فرمود: «وقتی یکی از شما به قضای حاجت می‌رود، سه سنگ با خود ببرد» [ابوداود]. از کمتر از سه سنگ نهی کرد [مسلم]. استجمار با سرگین، استخوان، غذا یا چیز محترم جائز نیست.',
+fr:'Le Prophète ﷺ a dit : « Que celui qui utilise des pierres en use en nombre impair » et : « Qu\'il emporte trois pierres, elles suffiront. » [Abu Dawud] Il a interdit moins de trois pierres [Muslim]. Interdit d\'utiliser du fumier, des os, de la nourriture ou tout objet sacré.',
+hi:'नबी ﷺ ने फरमाया: «जो इस्तिजमार करे, ताक संख्या इस्तेमाल करे» और «जब कोई पाखाने जाए तो तीन पत्थर ले जाए» [अबू दाऊद]। तीन से कम से मना किया [मुस्लिम]। गोबर, हड्डी, खाना या कोई पवित्र चीज़ से इस्तिजमार जायज़ नहीं।',
+bn:'নবী ﷺ বললেন: «যে ইস্তিজমার করে সে বেজোড় সংখ্যা ব্যবহার করুক» এবং «তিনটি পাথর নিয়ে যাও, তা যথেষ্ট হবে» [আবু দাউদ]। তিনটির কম থেকে নিষেধ করেছেন [মুসলিম]। গোবর, হাড়, খাবার বা সম্মানিত বস্তু দিয়ে ইস্তিজমার জায়েজ নয়।',
+id:'Nabi ﷺ bersabda: "Siapa yang beristijmar maka hendaklah ganjil" dan "Bawalah tiga batu bersamamu, itu cukup bagimu" [Abu Dawud]. Beliau melarang kurang dari tiga batu [Muslim]. Tidak boleh menggunakan kotoran, tulang, makanan, atau benda yang dimuliakan.',
+ms:'Nabi ﷺ bersabda: "Sesiapa yang beristijmar hendaklah ganjil" dan "Bawa tiga batu, ia mencukupimu" [Abu Dawud]. Beliau melarang kurang dari tiga batu [Muslim]. Tidak boleh menggunakan najis haiwan, tulang, makanan atau benda yang dimuliakan.',
+tr:'Peygamber ﷺ buyurdu: "Kim taşla istijmar yaparsa tek sayı kullansın" ve "Abdest bozacak kişi yanına üç taş alsın, yeter." [Ebu Davud] Üçten azını yasakladı [Müslim]. Dışkı, kemik, yiyecek veya kutsal bir şeyle istijmar caiz değildir.'
+})},
+{type:'rule',text:T({
+ar:'والأفضل أن يستجمر الإنسان بالحجارة وما أشبهها كالمناديل ونحو ذلك، ثم يتبعها الماء؛ لأن الحجارة تزيل عين النجاسة، والماء يطهر المحل، فيكون أبلغ. وإن أراد الاقتصار على أحدهما فالماء أفضل لأنه يطهر المحل ويزيل العين والأثر وهو أبلغ في التنظيف.',
+en:'The best practice is to use stones or similar materials like tissues, then follow with water — because stones remove the substance of impurity and water purifies the area, making it more thorough. If one must choose only one, water is preferable as it purifies the area and removes all traces.',
+ur:'بہترین یہ ہے کہ پتھروں یا ٹشو جیسی چیزوں سے استجمار کرے پھر پانی استعمال کرے، کیونکہ پتھر نجاست کا عین ہٹاتے ہیں اور پانی محل کو پاک کرتا ہے۔ اگر ایک پر اقتصار کرنا ہو تو پانی بہتر ہے۔',
+fa:'بهترین آن است که با سنگ‌ها یا دستمال استجمار کند سپس آب استفاده کند، چون سنگ عین نجاست را می‌برد و آب محل را پاک می‌کند. اگر باید یکی را انتخاب کرد، آب بهتر است.',
+fr:'Il est préférable d\'utiliser les pierres ou équivalents comme les mouchoirs, puis de l\'eau — car les pierres enlèvent la substance, l\'eau purifie le lieu. Si l\'on doit choisir, l\'eau est préférable.',
+hi:'सबसे बेहतर है पत्थरों या टिशू जैसी चीज़ों का इस्तेमाल करें, फिर पानी लगाएं। अगर एक ही चुनना हो तो पानी बेहतर है क्योंकि यह जगह को पूरी तरह पाक कर देता है।',
+bn:'সর্বোত্তম হলো পাথর বা টিস্যু ব্যবহারের পর পানি ব্যবহার করা। শুধু একটি বেছে নিতে হলে পানি উত্তম, কারণ এটি স্থান পুরোপুরি পবিত্র করে।',
+id:'Yang terbaik adalah menggunakan batu atau tisu lalu mengikutinya dengan air. Jika harus memilih satu, air lebih utama karena membersihkan tempat secara menyeluruh.',
+ms:'Yang terbaik ialah menggunakan batu atau tisu kemudian diikuti air. Jika terpaksa memilih satu, air lebih afdal kerana ia menyucikan tempat secara menyeluruh.',
+tr:'En fazileti taş veya mendil gibi şeyler kullandıktan sonra su kullanmaktır. Birini seçmek zorunda kalırsa, su tercih edilir; çünkü mekanı tamamen temizler.'
+})}
+]},
+
+{id:2,icon:'🤲',
+title:T({ar:'أحكام التيمم واليسر في الشريعة',ur:'تیمم کے احکام اور شریعت میں آسانی',fa:'احکام تیمم و آسانی در شریعت',en:'Rules of Tayammum & Ease in Islam',fr:'Règles du tayammum et facilité dans la charia',hi:'तयम्मुम के नियम और इस्लाम में सरलता',bn:'তায়াম্মুমের বিধান ও ইসলামে সহজতা',id:'Hukum Tayammum & Kemudahan Syariat',ms:'Hukum Tayammum & Kemudahan Syariat',tr:'Teyemmüm Hükümleri ve İslam\'da Kolaylık'}),
+blocks:[
+{type:'hadith',text:T({
+ar:'والإنسان مخير بين الاستنجاء بالماء أو الاستجمار بالحجارة وما أشبهها أو الجمع بينهما، عن أنس رضي الله عنه قال: «كان النبي ﷺ يدخل الخلاء فأحمل أنا وغلام نحوي إداوة من ماء وعنزة، فيستنجي بالماء» (متفق عليه)',
+en:'A person may choose between water alone, stones alone, or combining both. Anas (may Allah be pleased with him) said: "The Prophet ﷺ would enter the privy, and I and a young boy would carry a vessel of water and a spear, and he would clean himself with water." [Agreed upon]',
+ur:'انسان پانی، پتھروں یا دونوں میں سے جو چاہے استعمال کرے۔ انس رضی اللہ عنہ نے فرمایا: «نبی ﷺ جب قضائے حاجت جاتے تو میں اور ایک لڑکا پانی کا برتن اور نیزہ اٹھاتے، آپ پانی سے استنجاء فرماتے» (متفق علیہ)',
+fa:'انسان بین آب، سنگ یا جمع هر دو مخیر است. انس گفت: «پیامبر ﷺ داخل خلاء می‌شد و من و پسری آب و نیزه می‌بردیم، آن حضرت با آب استنجاء می‌کرد» (متفق علیه)',
+fr:'Une personne peut choisir l\'eau, les pierres ou les deux. Anas a dit : « Le Prophète ﷺ entrait aux toilettes et je portais de l\'eau, il se nettoyait avec l\'eau. » [Agreed upon]',
+hi:'व्यक्ति पानी, पत्थर या दोनों में से जो चाहे चुन सकता है। अनस ने कहा: «नबी ﷺ पाखाने जाते तो मैं और एक लड़का पानी लेकर जाते, आप पानी से इस्तिन्जा करते» (मुत्तफ़क़ अलैह)',
+bn:'মানুষ পানি, পাথর বা উভয়ের মধ্যে যেকোনো বেছে নিতে পারে। আনাস বললেন: «নবী ﷺ পায়খানায় প্রবেশ করতেন এবং আমি পানির পাত্র নিয়ে যেতাম, তিনি পানি দিয়ে ইস্তিঞ্জা করতেন» (মুত্তাফাক আলাইহি)',
+id:'Seseorang boleh memilih air, batu, atau keduanya. Anas berkata: "Nabi ﷺ masuk kakus dan saya membawa air, beliau beristinja dengan air." [Muttafaq alaih]',
+ms:'Seseorang boleh memilih air, batu atau kedua-duanya. Anas berkata: "Nabi ﷺ masuk tandas dan saya membawa air, baginda beristinja dengan air." [Muttafaq alaih]',
+tr:'Kişi su, taş veya her ikisini seçmekte serbesttir. Enes şöyle dedi: "Peygamber ﷺ helaya girerdi, ben ve bir çocuk su getirirdik, o su ile istinca yapardı." [Müttefekun aleyh]'
+})},
+{type:'hadith',text:T({
+ar:'وعن عائشة رضي الله عنها أنها قالت لجماعة من النساء: «مرن أزواجكن أن يستطيبوا بالماء فإني أستحييهم، وإن رسول الله ﷺ كان يفعله» قال الترمذي: هذا حديث صحيح.',
+en:'Aisha (may Allah be pleased with her) told a group of women: "Tell your husbands to clean with water, for I am too shy to tell them directly, and the Messenger of Allah ﷺ used to do so." Al-Tirmidhi said: This is a sound hadith.',
+ur:'عائشہ رضی اللہ عنہا نے خواتین سے کہا: «اپنے شوہروں کو کہو کہ پانی سے صفائی کریں، مجھے شرم آتی ہے کہ انہیں خود بتاؤں، رسول اللہ ﷺ ایسا کرتے تھے» ترمذی: یہ حدیث صحیح ہے۔',
+fa:'عائشه به زنانی گفت: «به شوهرانتان بگویید با آب پاک شوند، من شرم می‌کنم، رسول الله ﷺ این کار را می‌کرد» ترمذی: این حدیث صحیح است.',
+fr:'Aïcha a dit à des femmes : « Ordonnez à vos maris de se purifier avec de l\'eau, je suis gênée de leur dire, et le Messager d\'Allah ﷺ le faisait. » Al-Tirmidhi : hadith sahih.',
+hi:'आयशा ने महिलाओं से कहा: «अपने पतियों को पानी से सफाई के लिए कहो, मुझे शर्म आती है, और रसूलुल्लाह ﷺ यही करते थे» तिर्मिज़ी: यह हदीस सहीह है।',
+bn:'আয়েশা নারীদের বললেন: «তোমাদের স্বামীদের বলো পানি দিয়ে পবিত্রতা অর্জন করতে, আমি লজ্জা পাই, রাসুলুল্লাহ ﷺ এটা করতেন» তিরমিযী: এটি সহীহ হাদীস।',
+id:'Aisyah berkata kepada para wanita: "Perintahkan suami-suami kalian bersuci dengan air; saya malu memberitahu mereka langsung, Rasulullah ﷺ melakukannya." Al-Tirmidzi: hadis sahih.',
+ms:'Aisyah berkata kepada wanita-wanita: "Perintahkan suami-suami kamu bersuci dengan air; saya malu memberitahu mereka, Rasulullah ﷺ melakukannya." Al-Tirmidzi: hadis sahih.',
+tr:'Aişe kadınlara şöyle dedi: "Kocalarınıza su ile temizlenmelerini emredin; onlara bizzat söylemekten utanıyorum, Resulullah ﷺ bunu yapardı." Tirmizî: Bu sahih bir hadistir.'
+})},
+{type:'verse',text:T({
+ar:'ولما كانت الشريعة الإسلامية مبنية على اليسر والسهولة، فقد خفف الله سبحانه وتعالى عن أهل الأعذار عباداتهم؛ ليتمكنوا من عبادته تعالى بدون حرج ولا مشقة. قال تعالى: ﴿وَمَا جَعَلَ عَلَيْكُمْ فِي الدِّينِ مِنْ حَرَجٍ﴾ [الحج: ٧٨] وقال: ﴿يُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ وَلَا يُرِيدُ بِكُمُ الْعُسْرَ﴾ [البقرة: ١٨٥] وقال: ﴿فَاتَّقُوا اللَّهَ مَا اسْتَطَعْتُمْ﴾ [التغابن: ١٦]',
+en:'Since Islamic law is built on ease and facilitation, Allah has lightened worship for those with valid excuses. Allah says: ❝He has not placed upon you in the religion any difficulty.❞ [Al-Hajj: 78] And: ❝Allah intends ease for you, not hardship.❞ [Al-Baqarah: 185] And: ❝Fear Allah as much as you are able.❞ [Al-Taghabun: 16]',
+ur:'چونکہ شریعت اسلامیہ آسانی پر مبنی ہے، اللہ نے معذوروں کی عبادت ہلکی کر دی۔ اللہ نے فرمایا: ﴿اللہ نے دین میں تم پر کوئی تنگی نہیں رکھی﴾ [الحج: ٧٨] اور ﴿اللہ تمہارے ساتھ آسانی چاہتا ہے، تنگی نہیں﴾ [البقرہ: ١٨٥] اور ﴿جہاں تک ہو سکے اللہ سے ڈرو﴾ [التغابن: ١٦]',
+fa:'چون شریعت اسلامی بر آسانی بنا شده، خداوند عبادات اهل عذر را تخفیف داده. قال تعالى: ﴿در دین برای شما مشقتی قرار نداده﴾ [حج:٧٨] و ﴿خدا آسانی برای شما می‌خواهد نه سختی﴾ [بقره:١٨٥] و ﴿تا آنجا که می‌توانید از خدا بترسید﴾ [تغابن:١٦]',
+fr:'La charia étant fondée sur la facilité, Allah a allégé les obligations pour les excusés. Il dit : ❝Il ne vous a pas imposé de gêne dans la religion.❞ [22:78] ❝Allah veut la facilité pour vous.❞ [2:185] ❝Craignez Allah autant que vous pouvez.❞ [64:16]',
+hi:'इस्लामी शरीयत आसानी पर आधारित है, इसलिए अल्लाह ने मजबूरों की इबादत में तखफीफ की। अल्लाह ने फरमाया: ❝दीन में तुम पर कोई तंगी नहीं रखी❞ [हज:78] और ❝अल्लाह तुम्हारे लिए आसानी चाहता है❞ [बकरा:185] और ❝जितना हो सके अल्लाह से डरो❞ [तग़ाबुन:16]',
+bn:'শরীয়ত যেহেতু সহজতার উপর প্রতিষ্ঠিত, আল্লাহ অক্ষমদের ইবাদত হালকা করেছেন। আল্লাহ বলেন: ❝তিনি দীনে তোমাদের উপর কোনো কষ্ট রাখেননি❞ [হজ:৭৮] ❝আল্লাহ সহজ চান, কষ্ট চান না❞ [বাকারা:১৮৫] ❝সাধ্যমতো আল্লাহকে ভয় করো❞ [তাগাবুন:১৬]',
+id:'Karena syariat Islam dibangun atas kemudahan, Allah meringankan ibadah bagi yang uzur. Allah berfirman: ❝Dia tidak menjadikan kesempitan dalam agama.❞ [22:78] ❝Allah menghendaki kemudahan.❞ [2:185] ❝Bertaqwalah sebisa mungkin.❞ [64:16]',
+ms:'Kerana syariat Islam dibina atas kemudahan, Allah meringankan ibadah bagi yang uzur. Allah berfirman: ❝Dia tidak menjadikan kesempitan dalam agama.❞ [22:78] ❝Allah mahukan kemudahan.❞ [2:185] ❝Bertaqwalah semampu mungkin.❞ [64:16]',
+tr:'İslam şeriatı kolaylık üzerine kurulduğundan Allah, özür sahiplerinin ibadetlerini hafifletmiştir. Allah buyurur: ❝Dinde size güçlük yüklemedi.❞ [22:78] ❝Allah kolaylık ister, güçlük istemez.❞ [2:185] ❝Gücünüz yettiğince Allah\'tan korkun.❞ [64:16]'
+})},
+{type:'hadith',text:T({
+ar:'وقال النبي ﷺ: «إذا أمرتكم بأمر فأتوا منه ما استطعتم» وقال: «إن الدين يسر».',
+en:'The Prophet ﷺ said: "When I command you with something, do as much of it as you are able." And he said: "Indeed, the religion is ease."',
+ur:'نبی ﷺ نے فرمایا: «جب میں تمہیں کوئی حکم دوں تو جہاں تک ہو سکے اس پر عمل کرو» اور فرمایا: «بے شک دین آسان ہے»۔',
+fa:'پیامبر ﷺ فرمود: «وقتی شما را امر کنم، تا آنجا که می‌توانید انجام دهید» و فرمود: «بی‌گمان دین آسان است».',
+fr:'Le Prophète ﷺ a dit : « Quand je vous ordonne quelque chose, faites-en ce que vous pouvez. » Et : « La religion est certes facilité. »',
+hi:'नबी ﷺ ने फरमाया: «जब मैं तुम्हें कोई हुक्म दूं तो जितना हो सके उस पर अमल करो» और फरमाया: «बेशक दीन आसान है»।',
+bn:'নবী ﷺ বললেন: «আমি যখন তোমাদের কোনো আদেশ করি, সাধ্যমতো পালন করো» এবং বললেন: «নিশ্চয়ই দীন সহজ»।',
+id:'Nabi ﷺ bersabda: "Jika aku memerintahkan sesuatu, lakukan semampu kalian." Dan beliau bersabda: "Sesungguhnya agama itu mudah."',
+ms:'Nabi ﷺ bersabda: "Jika aku memerintahkan sesuatu, lakukan semampu kamu." Dan baginda bersabda: "Sesungguhnya agama itu mudah."',
+tr:'Peygamber ﷺ buyurdu: "Size bir şeyi emrettiğimde gücünüz yettiğince yapın." Ve buyurdu: "Şüphesiz din kolaylıktır."'
+})}
+]},
+
+{id:3,icon:'🏥',
+title:T({ar:'حالات المريض في الطهارة',ur:'بیمار کی طہارت کی حالتیں',fa:'حالات بیمار در طهارت',en:'Patient\'s Situations Regarding Purification',fr:'Situations du malade en matière de purification',hi:'बीमार की पवित्रता की अवस्थाएं',bn:'রোগীর পবিত্রতার অবস্থাসমূহ',id:'Kondisi Pasien dalam Bersuci',ms:'Keadaan Pesakit dalam Bersuci',tr:'Hastanın Temizlik Durumları'}),
+blocks:[
+{type:'rule',text:T({
+ar:'فالمريض إذا لم يستطع التطهر بالماء بأن يتوضأ من الحدث الأصغر، أو يغتسل من الحدث الأكبر، لعجزه أو لخوفه من زيادة المرض أو تأخر برئه فإنه يتيمم، وهو أن يضرب بيديه على التراب الطاهر ضربة واحدة، فيمسح وجهه بباطن أصابعه وكفيه براحتيه.',
+en:'If a patient cannot purify himself with water — due to inability, or fear that water would worsen his illness or delay recovery — he performs tayammum. This is done by striking the pure earth once with both hands, then wiping his face with his fingers and his hands with his palms.',
+ur:'اگر مریض پانی سے طہارت حاصل نہ کر سکے — عجز کی وجہ سے یا بیماری بڑھنے یا شفاء میں تاخیر کے خوف سے — تو تیمم کرے۔ یہ پاک مٹی پر ایک بار ہاتھ مارکر، انگلیوں سے چہرہ اور ہتھیلیوں سے ہاتھ مسح کرنا ہے۔',
+fa:'اگر بیمار نتواند با آب طهارت بگیرد — به خاطر ناتوانی یا ترس از شدت بیماری — تیمم می‌کند. این با یک ضربه دست بر خاک پاک، مسح صورت با انگشتان و مسح دست‌ها با کف است.',
+fr:'Si le malade ne peut pas se purifier à l\'eau — par incapacité ou crainte d\'aggraver la maladie — il fait le tayammum. Il frappe la terre pure une fois et essuie son visage avec ses doigts et ses mains avec ses paumes.',
+hi:'अगर मरीज़ पानी से पवित्रता हासिल न कर सके — असमर्थता के कारण या बीमारी बढ़ने के डर से — तो तयम्मुम करे। यह पाक मिट्टी पर एक बार हाथ मारकर चेहरे और हाथों पर मसह करना है।',
+bn:'যদি রোগী পানি দিয়ে পবিত্র হতে না পারে — অক্ষমতার কারণে বা রোগ বৃদ্ধির ভয়ে — তাহলে তায়াম্মুম করবে। পাক মাটিতে একবার হাত মেরে মুখ ও হাত মসেহ করাই তায়াম্মুম।',
+id:'Jika pasien tidak bisa bersuci dengan air — karena tidak mampu atau khawatir memperparah penyakit — maka bertayammum. Caranya: pukul tanah suci sekali dengan dua tangan, usap wajah dengan jari dan tangan dengan telapak.',
+ms:'Jika pesakit tidak boleh bersuci dengan air — kerana tidak mampu atau bimbang memburukkan penyakit — maka bertayammum. Caranya: pukul tanah suci sekali dengan kedua tangan, sapu muka dengan jari dan tangan dengan tapak tangan.',
+tr:'Hasta su ile taharet alamıyorsa — yetersizlik veya hastalığı kötüleştirme korkusuyla — teyemmüm yapar. Temiz toprağa bir kere ellerle vurulur; yüz parmaklarla, eller avuçlarla meshedilir.'
+})},
+{type:'verse',text:T({
+ar:'لقوله تعالى: ﴿وَإِنْ كُنتُمْ جُنُبًا فَاطَّهَّرُوا وَإِنْ كُنتُم مَّرْضَى أَوْ عَلَى سَفَرٍ أَوْ جَاءَ أَحَدٌ مِنكُمْ مِنَ الْغَائِطِ أَوْ لَامَسْتُمُ النِّسَاءَ فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا فَامْسَحُوا بِوُجُوهِكُمْ وَأَيْدِيكُمْ مِنْهُ﴾ [المائدة: ٦]',
+en:'❝If you are in a state of janabah, purify yourselves. But if you are ill, traveling, have relieved yourselves, or have had contact with women and find no water — seek clean earth and wipe your faces and hands with it.❞ [Al-Ma\'idah: 6]',
+ur:'﴿اگر تم جنابت کی حالت میں ہو تو غسل کرو، اور اگر بیمار ہو یا سفر پر ہو یا کوئی قضائے حاجت سے آئے یا عورتوں سے ملو اور پانی نہ پاؤ تو پاک مٹی سے تیمم کرو اور اپنے چہروں اور ہاتھوں پر مسح کرو﴾ [المائدہ: ٦]',
+fa:'﴿اگر جنب هستید غسل کنید، و اگر بیمار یا مسافر هستید یا از قضای حاجت آمده‌اید یا با زنان آمیزش کرده‌اید و آب نیافتید، با خاک پاک تیمم کنید و صورت و دستانتان را مسح کنید﴾ [مائده: ٦]',
+fr:'❝Si vous êtes en état de janaba, purifiez-vous. Si vous êtes malades, en voyage, avez eu un besoin ou touché des femmes sans trouver d\'eau — frappez une terre pure et essuyez vos visages et vos mains.❞ [5:6]',
+hi:'❝अगर तुम जनाबत की हालत में हो तो गुस्ल करो। अगर बीमार हो, सफर पर हो, कज़ाए हाजत से आए हो या औरतों से मिले हो और पानी न पाओ — तो पाक मिट्टी तलाश करो और अपने चेहरों और हाथों पर मसह करो।❞ [माइदा: 6]',
+bn:'❝যদি তোমরা জুনুব অবস্থায় থাকো, তাহলে গোসল করো। আর যদি অসুস্থ হও বা সফরে থাকো বা প্রকৃতির ডাকে গিয়ে থাকো বা স্ত্রীদের সাথে মিলিত হয়ে পানি না পাও — তাহলে পাক মাটি দিয়ে তায়াম্মুম করো।❞ [মায়েদা: ৬]',
+id:'❝Jika kamu junub, bersucilah. Jika sakit, bepergian, datang dari buang air, atau menyentuh perempuan dan tidak menemukan air — maka bertayammumlah dengan tanah suci dan usaplah wajah dan tangan.❞ [5:6]',
+ms:'❝Jika kamu junub, bersucilah. Jika sakit, bermusafir, datang dari buang air, atau menyentuh perempuan dan tidak menjumpai air — bertayammumlah dengan tanah suci dan sapulah muka dan tangan kamu.❞ [5:6]',
+tr:'❝Cünüp iseniz yıkanın. Hasta iseniz, yolculuktaysanız, abdest bozduysanız ya da kadınlara dokunup su bulamazsanız — temiz toprakla teyemmüm edin, yüzünüze ve ellerinize meshedin.❞ [5:6]'
+})},
+{type:'hadith',text:T({
+ar:'والعاجز عن استعمال الماء حكمه حكم من لم يجد الماء لقول الله سبحانه: ﴿فَاتَّقُوا اللَّهَ مَا اسْتَطَعْتُمْ﴾ ولقوله ﷺ لعمار بن ياسر: «إنما يكفيك أن تقول بيديك هكذا» ثم ضرب بيديه الأرض ضربة واحدة، ثم مسح بهما وجهه وكفيه. ولا يجوز التيمم إلا بتراب طاهر له غبار. ولا يصح التيمم إلا بنية؛ لقوله ﷺ: «إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى».',
+en:'One unable to use water has the same ruling as one who cannot find it, based on Allah\'s words: "Fear Allah as much as you are able." And the Prophet ﷺ told Ammar ibn Yasir: "It suffices you to do this with your hands" — then struck the earth once and wiped his face and hands. Tayammum requires pure dusty earth and intention, per the hadith: "Actions are by intentions, and each person shall have what he intended."',
+ur:'پانی استعمال کرنے سے عاجز شخص کا حکم وہی ہے جو پانی نہ پائے۔ آپ ﷺ نے عمار بن یاسر سے فرمایا: «تمہارے لیے اتنا کافی ہے کہ ہاتھوں سے ایسے کرو» پھر زمین پر ایک ضرب لگائی اور چہرہ اور ہاتھ مسح کیا۔ تیمم صرف پاک مٹی سے جائز ہے اور نیت ضروری ہے: «اعمال کا دارومدار نیتوں پر ہے»۔',
+fa:'کسی که از استفاده آب عاجز است حکمش مثل کسی است که آب ندارد. پیامبر ﷺ به عمار گفت: «کافی است این‌گونه با دستانت» سپس یک ضربه بر زمین زد و صورت و دستانش را مسح کرد. تیمم فقط با خاک پاک و با نیت صحیح است.',
+fr:'Celui qui ne peut pas utiliser l\'eau a le même statut que celui qui n\'en trouve pas. Le Prophète ﷺ a dit à Ammar : « Il te suffit de faire ainsi avec tes mains », puis il frappa la terre une fois et essuya son visage et ses mains. Le tayammum nécessite de la terre pure avec de la poussière et une intention.',
+hi:'पानी इस्तेमाल करने से अक्षम व्यक्ति का हुक्म वैसा ही है जो पानी न पाए। नबी ﷺ ने अम्मार से कहा: «बस यूं हाथों से काफी है» फिर ज़मीन पर एक बार मारा और चेहरे व हाथों पर मसह किया। तयम्मुम सिर्फ पाक मिट्टी से और नीयत के साथ सहीह है।',
+bn:'পানি ব্যবহারে অক্ষম ব্যক্তির হুকুম পানি না পাওয়া ব্যক্তির মতো। নবী ﷺ আম্মারকে বললেন: «হাত দিয়ে এভাবে যথেষ্ট» তারপর মাটিতে একবার আঘাত করে মুখ ও হাত মসেহ করলেন। তায়াম্মুম পাক মাটি ও নিয়তসহ সহীহ।',
+id:'Yang tidak bisa menggunakan air hukumnya sama dengan yang tidak menemukan air. Nabi ﷺ berkata kepada Ammar: "Cukuplah kamu lakukan begini" lalu beliau memukul tanah sekali dan mengusap wajah dan tangannya. Tayammum hanya dengan tanah suci berdebu dan niat.',
+ms:'Yang tidak boleh menggunakan air hukumnya sama dengan yang tidak menjumpai air. Nabi ﷺ berkata kepada Ammar: "Cukuplah kamu lakukan begini" lalu baginda memukul tanah sekali dan menyapu muka dan tangannya. Tayammum hanya dengan tanah suci berdebu dan niat.',
+tr:'Suyu kullanamayan, su bulamayanla aynı hükme tabidir. Peygamber ﷺ Ammar\'a dedi: "Sana şöyle yapmak yeter" sonra toprağa bir vurdu, yüzünü ve ellerini meshetti. Teyemmüm ancak toz içeren temiz toprakla ve niyetle geçerlidir.'
+})},
+{type:'case',text:T({
+ar:'الحالة الأولى: إن كان مرضه يسيراً لا يخاف من استعمال الماء معه تلفاً، ولا مرضاً مخوفاً، ولا إبطاء برءه، ولا زيادة ألم، ولا شيئاً فاحشاً، وذلك كصداع، ووجع ضرس، ونحوهما، أو كان ممن يمكنه استعمال الماء الدافئ ولا ضرر عليه. فهذا لا يجوز له التيمم.',
+en:'Case 1: If the illness is minor — with no fear of harm, worsening illness, delayed recovery, or significant increased pain from using water — such as a headache or toothache, or if warm water can be used without harm — tayammum is NOT permitted for this person.',
+ur:'پہلی حالت: اگر بیماری ہلکی ہو جس میں پانی استعمال کرنے سے تلف، مرض یا تاخیر شفاء کا خوف نہ ہو — جیسے سردرد، دانت کا درد وغیرہ، یا گرم پانی استعمال کر سکتا ہو — تو اسے تیمم کی اجازت نہیں۔',
+fa:'حالت اول: اگر بیماری سبک باشد و ترس تلف، تشدید یا تأخیر شفا از استفاده آب نباشد — مثل سردرد یا دندان درد — یا بتواند آب گرم استفاده کند، تیمم برای او جائز نیست.',
+fr:'Cas 1 : Si la maladie est mineure, sans crainte de dommage, d\'aggravation ou de retard de guérison dû à l\'eau — comme un mal de tête ou une douleur dentaire, ou si l\'eau chaude peut être utilisée — le tayammum n\'est PAS permis.',
+hi:'पहली अवस्था: अगर बीमारी हल्की हो — पानी से नुकसान, बीमारी बढ़ने या शफाई में देरी का डर न हो — जैसे सिरदर्द, दांत का दर्द, या गर्म पानी इस्तेमाल हो सके — तो तयम्मुम जायज़ नहीं।',
+bn:'প্রথম অবস্থা: যদি অসুস্থতা হালকা হয় — পানিতে ক্ষতি, রোগ বৃদ্ধি বা সুস্থতায় বিলম্বের ভয় না থাকে — যেমন মাথাব্যথা, দাঁতব্যথা, বা উষ্ণ পানি ব্যবহার করা সম্ভব হয় — তাহলে তায়াম্মুম জায়েজ নয়।',
+id:'Kasus 1: Jika penyakit ringan — tanpa khawatir bahaya, memburuk, atau terlambat sembuh karena air — seperti sakit kepala atau sakit gigi, atau bisa memakai air hangat — tayammum TIDAK dibolehkan.',
+ms:'Kes 1: Jika penyakit ringan — tanpa bimbang bahaya, bertambah teruk atau lambat sembuh kerana air — seperti sakit kepala atau sakit gigi, atau boleh menggunakan air suam — tayammum TIDAK dibolehkan.',
+tr:'Durum 1: Hastalık hafifse — su kullanımından zarar, ağırlaşma veya geç iyileşme korkusu yoksa — baş ağrısı, diş ağrısı gibi, ya da ılık su kullanılabiliyorsa — teyemmüm CAIZ DEĞİLDİR.'
+})},
+{type:'case',text:T({
+ar:'الحالة الثانية: وإن كان به مرض يخاف معه تلف النفس، أو تلف عضو أو حدوث مرض - فهذا يجوز له التيمم لقوله تعالى: ﴿وَلَا تَقْتُلُوا أَنفُسَكُمْ إِنَّ اللَّهَ كَانَ بِكُمْ رَحِيمًا﴾ [النساء: ٢٩]',
+en:'Case 2: If there is disease where using water risks loss of life, loss of a limb, or onset of another illness — tayammum IS permitted. Allah says: ❝Do not kill yourselves. Indeed, Allah is ever Merciful to you.❞ [An-Nisa: 29]',
+ur:'دوسری حالت: اگر بیماری ایسی ہو کہ پانی سے جان، عضو یا نئی بیماری کا خوف ہو — تو تیمم جائز ہے۔ اللہ فرماتا ہے: ﴿اپنے آپ کو قتل مت کرو، بے شک اللہ تم پر مہربان ہے﴾ [النساء: ٢٩]',
+fa:'حالت دوم: اگر بیماری‌ای باشد که ترس تلف جان، عضو یا بیماری جدید داشته باشد — تیمم جائز است. خداوند فرمود: ﴿خود را نکشید، همانا خدا به شما مهربان است﴾ [نساء: ٢٩]',
+fr:'Cas 2 : Si la maladie risque la perte de vie, d\'un membre ou l\'apparition d\'une autre maladie — le tayammum EST permis. Allah dit : ❝Ne vous tuez pas. Allah est Miséricordieux envers vous.❞ [4:29]',
+hi:'दूसरी अवस्था: अगर बीमारी ऐसी हो कि पानी से जान, अंग के नुकसान या नई बीमारी का डर हो — तयम्मुम जायज़ है। अल्लाह ने फरमाया: ❝खुद को मत मारो, बेशक अल्लाह तुम पर मेहरबान है।❞ [निसा: 29]',
+bn:'দ্বিতীয় অবস্থা: যদি পানিতে প্রাণ, অঙ্গ বা নতুন রোগের ভয় থাকে — তায়াম্মুম জায়েজ। আল্লাহ বলেন: ❝নিজেদের হত্যা করো না, নিশ্চয়ই আল্লাহ তোমাদের প্রতি দয়ালু।❞ [নিসা: ২৯]',
+id:'Kasus 2: Jika ada penyakit yang dikhawatirkan membahayakan jiwa, anggota tubuh, atau memunculkan penyakit lain — tayammum DIBOLEHKAN. Allah berfirman: ❝Janganlah kamu membunuh dirimu. Allah Maha Penyayang.❞ [4:29]',
+ms:'Kes 2: Jika ada penyakit yang dibimbangkan membahayakan jiwa, anggota badan, atau menimbulkan penyakit lain — tayammum DIBOLEHKAN. Allah berfirman: ❝Janganlah kamu membunuh dirimu. Allah Maha Penyayang.❞ [4:29]',
+tr:'Durum 2: Suyun kullanılması can, uzuv kaybı veya yeni hastalık riskini taşıyorsa — teyemmüm CAİZDİR. Allah buyurur: ❝Kendinizi öldürmeyin. Allah size çok merhametlidir.❞ [4:29]'
+})},
+{type:'case',text:T({
+ar:'الحالة الثالثة: وإن كان به مرض لا يقدر معه على الحركة ولا يجد من يناوله الماء - جاز له التيمم فإن كان لا يستطيع التيمم يممه غيره، وإن تلوث بدنه أو ملابسه أو فراشه بالنجاسة، ولم يستطع إزالة النجاسة أو التطهر منها - جاز له الصلاة على حالته التي هو عليها ولا يجوز له تأخير الصلاة عن وقتها بأي حال.',
+en:'Case 3: If the patient cannot move and has no one to bring water — tayammum is permitted. If he cannot perform tayammum himself, another may do it for him. If his body, clothes, or bedding are soiled with impurity and he cannot remove it — he may pray in that condition. Prayer must NOT be delayed beyond its time under any circumstance.',
+ur:'تیسری حالت: اگر حرکت کرنے سے قاصر ہو اور پانی پہنچانے والا نہ ملے — تیمم جائز ہے، کوئی دوسرا تیمم کرا سکتا ہے۔ اگر بدن، کپڑے یا بستر نجاست سے آلودہ ہوں اور پاکی ممکن نہ ہو — اسی حالت میں نماز جائز ہے۔ کسی بھی صورت نماز کو وقت سے مؤخر نہیں کیا جا سکتا۔',
+fa:'حالت سوم: اگر نتواند حرکت کند و کسی آب برایش نیاورد — تیمم جائز است، دیگری می‌تواند تیممش دهد. اگر بدن، لباس یا تختخواب به نجاست آلوده شود و نتواند پاک کند — نماز در همان حال جائز است. تأخیر نماز از وقتش به هیچ وجه جائز نیست.',
+fr:'Cas 3 : S\'il ne peut pas se déplacer et personne ne peut lui apporter de l\'eau — le tayammum est permis ; quelqu\'un d\'autre peut le faire pour lui. Si son corps ou ses vêtements sont souillés et qu\'il ne peut pas les nettoyer — il prie dans cet état. Il ne peut jamais retarder la prière au-delà de son temps.',
+hi:'तीसरी अवस्था: अगर हरकत करने पर क़ादिर न हो और पानी पहुंचाने वाला न हो — तयम्मुम जायज़ है, कोई और भी करा सकता है। अगर बदन, कपड़े या बिस्तर नजासत से आलूदा हों और पाकी मुमकिन न हो — उसी हालत में नमाज़ जायज़। किसी भी हाल में नमाज़ को वक़्त से देर नहीं की जा सकती।',
+bn:'তৃতীয় অবস্থা: যদি নড়াচড়া করতে না পারে এবং পানি এনে দেওয়ার কেউ না থাকে — তায়াম্মুম জায়েজ, অন্য কেউ করিয়ে দিতে পারে। শরীর, কাপড় বা বিছানা অপবিত্র এবং পাক করতে না পারলে — সেই অবস্থায় নামায জায়েজ। কোনো অবস্থায় নামায সময়ের পরে পড়া যাবে না।',
+id:'Kasus 3: Jika tidak bisa bergerak dan tidak ada yang membawakan air — tayammum boleh, orang lain bisa mentayammumkan. Jika tubuh, pakaian, atau kasur terkena najis dan tidak bisa dibersihkan — boleh shalat dalam kondisi itu. Shalat tidak boleh diakhirkan melewati waktunya.',
+ms:'Kes 3: Jika tidak boleh bergerak dan tiada orang membawakan air — tayammum dibolehkan, orang lain boleh mentayammumkan. Jika badan, pakaian atau tilam terkena najis dan tidak boleh dibersihkan — boleh solat dalam keadaan itu. Solat tidak boleh dilewatkan dari waktunya.',
+tr:'Durum 3: Hareket edemez ve su getirecek kimse yoksa — teyemmüm caizdir; başkası da yapabilir. Bedeni, elbisesi veya yatağı necasetle kirlenmişse ve temizleyemiyorsa — o halde namaz kılabilir. Namaz hiçbir durumda vaktinden sonraya ertelenez.'
+})},
+{type:'case',text:T({
+ar:'الحالة الرابعة: من به جروح أو قروح أو كسر أو مرض يضره استعمال الماء - جاز له التيمم للأدلة السابقة، وإن أمكنه غسل الصحيح من جسده وجب عليه ذلك، وتيمم للباقي. وإن كان عليه جبيرة يحتاج إلى بقائها في الوضوء والغسل، وغسل بقية العضو، وإن كان المسح على الجبيرة يضره تيمم عنها.',
+en:'Case 4: Whoever has wounds, sores, fractures, or illness where water causes harm — tayammum is permitted. If he can wash the healthy parts of his body, he must do so, and perform tayammum for the rest. If he has a splint he must keep on — he wipes over it during wudu/ghusl and washes the rest of the limb. If even wiping harms him, he performs tayammum instead.',
+ur:'چوتھی حالت: جس کے زخم، پھوڑے، فریکچر یا ایسی بیماری ہو جو پانی سے بڑھتی ہو — تیمم جائز۔ اگر صحیح حصہ دھو سکے تو واجب ہے، باقی کے لیے تیمم۔ اگر پٹی ہو تو وضو/غسل میں اس پر مسح کرے، باقی عضو دھوئے۔ اگر مسح بھی نقصان دہ ہو تو تیمم کرے۔',
+fa:'حالت چهارم: اگر زخم، دمل، شکستگی یا بیماری‌ای باشد که آب به آن ضرر می‌زند — تیمم جائز است. اگر بتواند قسمت سالم را بشوید واجب است، برای باقی تیمم کند. اگر باند دارد روی آن مسح کند، اگر مسح هم ضرر دارد تیمم کند.',
+fr:'Cas 4 : Blessures, plaies, fractures, ou maladie aggravée par l\'eau — tayammum permis. S\'il peut laver les parties saines, il le doit, et fait le tayammum pour le reste. Si une attelle doit rester, il masse dessus ; si même cela nuit, il fait le tayammum.',
+hi:'चौथी अवस्था: जिसे जख्म, फोड़े, फ्रैक्चर या ऐसी बीमारी हो जिसमें पानी नुकसान करे — तयम्मुम जायज़। स्वस्थ हिस्सा धोना वाजिब, बाकी के लिए तयम्मुम। पट्टी हो तो उस पर मसह करे; मसह भी नुकसानदह हो तो तयम्मुम।',
+bn:'চতুর্থ অবস্থা: ক্ষত, ঘা, ভাঙা হাড় বা পানিতে ক্ষতিকর রোগ থাকলে — তায়াম্মুম জায়েজ। সুস্থ অংশ ধোয়া ওয়াজিব, বাকির জন্য তায়াম্মুম। ব্যান্ডেজ থাকলে উপর মসেহ করবে; মসেহও ক্ষতিকর হলে তায়াম্মুম।',
+id:'Kasus 4: Luka, borok, patah tulang, atau penyakit yang diperparah air — tayammum boleh. Jika bisa membasuh bagian yang sehat, wajib dilakukan; tayammum untuk sisanya. Jika ada gips yang harus dipertahankan — usap di atasnya; jika mengusapnya pun berbahaya, lakukan tayammum.',
+ms:'Kes 4: Luka, kudis, patah tulang, atau penyakit yang diburukkan air — tayammum boleh. Jika boleh membasuh bahagian sihat, wajib dilakukan; tayammum untuk bakinya. Jika ada bebat yang perlu dikekalkan — sapu di atasnya; jika menyapunya pun berbahaya, lakukan tayammum.',
+tr:'Durum 4: Yara, çıban, kırık veya su zarar veriyorsa — teyemmüm caizdir. Sağlıklı kısmı yıkamak zorundaysa onu yıkar, kalanı için teyemmüm yapar. Alçı tutuyorsa üzerine mesheder; meshetmek de zararlıysa teyemmüm yapar.'
+})},
+{type:'rule',text:T({
+ar:'المريض المصاب بسلس البول أو استمرار خروج الدم أو الريح، ولم يبرأ بمعالجته، عليه أن يتوضأ لكل صلاة بعد دخول وقتها، ويغسل ما يصيب بدنه وثوبه أو يجعل للصلاة ثوباً طاهراً، إن تيسر له ذلك. ويحتاط لنفسه احتياطاً يمنع انتشار البول أو الدم في ثوبه أو جسمه أو مكان صلاته. ويبطل التيمم بكل ما يبطل به الوضوء، وبالقدرة على استعمال الماء، أو وجوده إن كان معدوماً، والله أعلم.',
+en:'A patient with chronic urinary incontinence, continuous bleeding, or constant passing of gas — who cannot be cured by treatment — must perform wudu for each prayer after its time begins. He washes what soils his body or clothes, or uses a pure garment for prayer if possible. He takes precautions to prevent spread of impurity. Tayammum is invalidated by all that invalidates wudu, and by the ability to use water. Allah knows best.',
+ur:'سلس البول، خون یا ہوا کے مسلسل اخراج والا مریض جسے علاج سے شفاء نہ ملی — ہر نماز کے وقت کے بعد وضو کرے، بدن اور کپڑے دھوئے یا نماز کے لیے پاک کپڑا رکھے۔ احتیاط کرے تاکہ نجاست نہ پھیلے۔ تیمم ان سب چیزوں سے ٹوٹ جاتا ہے جن سے وضو ٹوٹتا ہے، اور پانی ملنے یا استعمال کی قدرت سے بھی۔ واللہ اعلم۔',
+fa:'مریض مبتلا به سلس بول یا خونریزی مداوم یا خروج مداوم ریح — که با درمان بهبود نیافته — باید برای هر نماز پس از دخول وقت وضو بگیرد. بدن و لباس را بشوید یا لباس پاکی برای نماز داشته باشد. تیمم با هر چیزی که وضو را باطل می‌کند و با توانایی استفاده از آب باطل می‌شود. والله اعلم.',
+fr:'Le patient atteint d\'incontinence urinaire, de saignements ou de vents continus non guéris doit faire le wudu à chaque prière après son entrée. Il lave les souillures ou porte un vêtement pur pour la prière. Il prend des précautions contre la propagation. Le tayammum est invalidé par tout ce qui invalide le wudu, et par la capacité d\'utiliser l\'eau. Allah sait mieux.',
+hi:'पेशाब, खून या हवा के मसलसल निकलने वाले मरीज़ — जो इलाज से ठीक न हो — हर नमाज़ के वक़्त के बाद वुज़ू करे। बदन और कपड़े धोए या नमाज़ के लिए पाक कपड़ा रखे। एहतियात करे। तयम्मुम उन सब चीज़ों से टूट जाता है जिनसे वुज़ू टूटता है और पानी की क़ुदरत से भी। वल्लाहु अअलम।',
+bn:'প্রস্রাব, রক্ত বা বায়ু ক্রমাগত নির্গমনের রোগী — যে চিকিৎসায় সুস্থ হয়নি — প্রতি নামাযের সময় হলে ওযু করবে। শরীর ও কাপড় ধুবে বা নামাযের জন্য পাক কাপড় রাখবে। সতর্কতা অবলম্বন করবে। তায়াম্মুম ওযু ভঙ্গের কারণ ও পানি ব্যবহারের সক্ষমতায় বাতিল হয়। আল্লাহু আলাম।',
+id:'Pasien dengan inkontinensia urin, pendarahan terus, atau angin terus yang tidak bisa disembuhkan — harus wudu setiap kali waktu shalat masuk. Cuci yang terkena najis atau siapkan pakaian suci untuk shalat. Tayammum batal dengan semua yang membatalkan wudu dan dengan kemampuan menggunakan air. Wallahu a\'lam.',
+ms:'Pesakit dengan inkontinens air kencing, pendarahan berterusan, atau angin berterusan yang tidak boleh dirawat — mesti berwudu setiap kali waktu solat masuk. Basuh yang terkena najis atau sediakan pakaian suci untuk solat. Tayammum batal dengan semua yang membatalkan wudu dan dengan kemampuan menggunakan air. Wallahu a\'lam.',
+tr:'Sürekli bevl kaçırma, kanama veya yellenme hastası — tedaviyle iyileşmeyen — her namaz vakti girince abdest alır. Bedeni veya elbisesindeki necaseti temizler ya da namaz için temiz elbise giyer. Teyemmüm, abdesti bozan her şeyle ve suyu kullanabilme gücüyle bozulur. Allah daha iyi bilir.'
+})}
+]},
+
+{id:4,icon:'🙏',
+title:T({ar:'كيفية صلاة المريض',ur:'بیمار کی نماز کا طریقہ',fa:'کیفیت نماز بیمار',en:'How the Patient Performs Prayer',fr:'Comment le malade effectue la prière',hi:'बीमार की नमाज़ का तरीका',bn:'রোগীর নামাযের পদ্ধতি',id:'Cara Shalat Orang Sakit',ms:'Cara Solat Orang Sakit',tr:'Hastanın Namaz Kılma Şekli'}),
+blocks:[
+{type:'hadith',text:T({
+ar:'أجمع أهل العلم على أن من لا يستطيع القيام له أن يصلي جالساً، فإن عجز عن الصلاة جالساً فإنه يصلي على جنبه مستقبل القبلة بوجهه، والمستحب أن يكون على جنبه الأيمن فإن عجز عن الصلاة على جنبه صلى مستلقياً؛ لقوله ﷺ: «لعمران بن حصين صل قائماً، فإن لم تستطع فقاعداً، فإن لم تستطع فعلى جنب» (رواه البخاري، وزاد النسائي: «فإن لم تستطع فمستلقياً»).',
+en:'Scholars unanimously agree: whoever cannot stand may pray seated. If unable to pray seated, he prays on his side facing the qibla — preferably the right side. If unable, he prays on his back. The Prophet ﷺ said to Imran ibn Husayn: "Pray standing; if you cannot, seated; if you cannot, on your side." [Bukhari] Al-Nasa\'i added: "if you cannot, then lying on your back."',
+ur:'علماء کا اجماع ہے: جو کھڑا نہ ہو سکے بیٹھ کر نماز پڑھے۔ بیٹھنے سے بھی عاجز ہو تو قبلہ رخ کروٹ لے کر — دائیں کروٹ مستحب ہے۔ اس سے بھی عاجز ہو تو لیٹ کر۔ آپ ﷺ نے عمران بن حصین سے فرمایا: «کھڑے ہو کر نماز پڑھو، نہ ہو سکے تو بیٹھ کر، نہ ہو سکے تو کروٹ لے کر» [بخاری] نسائی کا اضافہ: «نہ ہو سکے تو لیٹ کر»۔',
+fa:'علما اجماع دارند: کسی که نمی‌تواند بایستد نشسته نماز بخواند. اگر نشستن هم ممکن نیست، بر پهلو رو به قبله بخواند — پهلوی راست مستحب است. اگر باز هم ممکن نیست، طاق‌باز بخواند. پیامبر ﷺ به عمران فرمود: «ایستاده نماز بخوان، اگر نشد نشسته، اگر نشد پهلو»  [بخاری] نسائی افزود: «اگر نشد، طاق‌باز».',
+fr:'Les savants s\'accordent : qui ne peut se lever prie assis ; s\'il ne peut rester assis, sur le côté face à la qibla — côté droit de préférence ; s\'il ne peut, sur le dos. Le Prophète ﷺ dit à Imran : « Prie debout ; si tu ne peux, assis ; si tu ne peux, sur le côté. » [Bukhari] Al-Nasai ajoute : « Si tu ne peux, allongé. »',
+hi:'उलमा का इजमा है: जो खड़ा न हो सके, बैठ कर नमाज़ पढ़े। बैठने से भी अक्षम हो तो क़िबला की तरफ करवट लेकर — दाईं करवट मुस्तहब है। इससे भी अक्षम हो तो लेट कर। नबी ﷺ ने इमरान से फरमाया: «खड़े होकर नमाज़ पढ़ो, न हो सके तो बैठ कर, न हो सके तो करवट लेकर» [बुखारी] नसाई का इज़ाफा: «न हो सके तो लेट कर»।',
+bn:'আলেমদের ইজমা: যে দাঁড়াতে পারে না বসে নামায পড়বে। বসতে না পারলে কিবলামুখী কাত হয়ে — ডান কাত মুস্তাহাব। না পারলে চিৎ হয়ে। নবী ﷺ ইমরানকে বললেন: «দাঁড়িয়ে নামায পড়ো, না পারলে বসে, না পারলে কাত হয়ে» [বুখারী] নাসাঈয়ের সংযোজন: «না পারলে চিৎ হয়ে»।',
+id:'Ulama sepakat: yang tidak bisa berdiri shalat sambil duduk; tidak bisa duduk — berbaring menyamping menghadap kiblat, lebih utama sisi kanan; tidak bisa — berbaring telentang. Nabi ﷺ berkata kepada Imran: "Shalatlah berdiri; tidak bisa, duduk; tidak bisa, berbaring." [Bukhari] Al-Nasai menambah: "tidak bisa, telentang."',
+ms:'Ulama bersepakat: yang tidak boleh berdiri solat sambil duduk; tidak boleh duduk — berbaring menghadap kiblat, lebih afdal sebelah kanan; tidak boleh — berbaring telentang. Nabi ﷺ berkata kepada Imran: "Solatkan berdiri; tidak boleh, duduk; tidak boleh, berbaring miring." [Bukhari] Al-Nasai menambah: "tidak boleh, telentang."',
+tr:'Ulema ittifak etmiştir: ayakta duramayan oturarak namaz kılar; oturamıyorsa, kıbleye dönük yan yatar — sağ taraf daha faziletlidir; bunun da gücü yoksa sırt üstü yatar. Peygamber ﷺ Imran\'a dedi: "Ayakta kıl; gücün yetmezse otur; yetmezse yan yat." [Buharî] Nesaî ekledi: "yetmezse sırt üstü."'
+})},
+{type:'rule',text:T({
+ar:'ومن قدر على القيام وعجز عن الركوع أو السجود لم يسقط عنه القيام، بل يصلي قائماً فيومئ بالركوع، ثم يجلس ويومي بالسجود؛ لقوله تعالى: ﴿وَقُومُوا لِلَّهِ قَانِتِينَ﴾ [البقرة: ٢٣٨]. ومن عجز عن الركوع والسجود أوما بهما، ويجعل السجود أخفض من الركوع. وإن لم يمكنه أن يحني ظهره فصار كأنه راكع فمتى أراد الركوع زاد في انحنائه قليلاً، ويقرب وجهه إلى الأرض في السجود أكثر ما أمكنه.',
+en:'Whoever can stand but cannot bow or prostrate — standing is not waived. He prays standing and indicates bowing with his head, then sits and indicates prostration. Allah says: "Stand before Allah devoutly." [2:238] Whoever cannot bow and prostrate indicates both — making prostration lower than bowing. If his back is already hunched like a bowing posture, he inclines slightly more for ruku and brings his face closer to the ground for sujud as much as possible.',
+ur:'جو کھڑا ہو سکے لیکن رکوع یا سجدہ نہ کر سکے — قیام ساقط نہیں۔ کھڑے ہو کر رکوع کا اشارہ کرے، پھر بیٹھ کر سجدہ کا۔ اللہ فرماتا ہے: ﴿اللہ کے لیے ادب سے کھڑے رہو﴾ [البقرہ:238]۔ رکوع و سجدہ دونوں سے عاجز ہو تو دونوں کا اشارہ کرے، سجدہ کا اشارہ رکوع سے کم ہو۔ اگر کمر جھکی ہو تو رکوع میں تھوڑا مزید جھکے اور سجدہ میں زیادہ سے زیادہ زمین کی طرف جھکے۔',
+fa:'کسی که می‌تواند بایستد اما نمی‌تواند رکوع یا سجده کند — قیام ساقط نمی‌شود. ایستاده اشاره رکوع کند، سپس بنشیند و اشاره سجده. قرآن: ﴿برای خدا با فروتنی بایستید﴾ [بقره:238]. اگر هر دو ممکن نیست اشاره کند، سجده پایین‌تر از رکوع. اگر کمرش کج است، در رکوع کمی بیشتر خم شود و در سجده تا می‌تواند صورت به زمین نزدیک کند.',
+fr:'Qui peut se tenir debout mais ne peut ni s\'incliner ni se prosterner — debout est maintenu. Il prie debout en indiquant le ruku, puis s\'assoit pour indiquer le sujud. Allah dit : "Tenez-vous debout pieusement." [2:238] Quand les deux sont impossibles, il les indique — la prosternation plus bas que l\'inclinaison.',
+hi:'जो खड़ा हो सकता हो लेकिन रुकू या सजदा न कर सके — क़याम साकित नहीं। खड़े होकर रुकू का इशारा करे, फिर बैठकर सजदे का। अल्लाह ने फरमाया: ﴿अल्लाह के लिए अदब के साथ खड़े रहो﴾ [बकरा:238]। दोनों से आजिज़ हो तो दोनों का इशारा करे, सजदा रुकू से कम हो।',
+bn:'যে দাঁড়াতে পারে কিন্তু রুকু বা সিজদা করতে পারে না — কিয়াম বাদ পড়ে না। দাঁড়িয়ে রুকুর ইশারা করবে, তারপর বসে সিজদার। আল্লাহ বলেন: ﴿আল্লাহর জন্য বিনয়ের সাথে দাঁড়াও﴾ [বাকারা:২৩৮]। উভয় থেকে অক্ষম হলে উভয়ের ইশারা করবে।',
+id:'Yang bisa berdiri tapi tidak bisa ruku atau sujud — berdiri tidak gugur. Ia berdiri dan memberi isyarat ruku, lalu duduk dan memberi isyarat sujud. Allah berfirman: "Berdirilah karena Allah dengan khusyu." [2:238] Jika keduanya tidak bisa — berisyarat, dengan isyarat sujud lebih rendah dari ruku.',
+ms:'Yang boleh berdiri tetapi tidak boleh ruku atau sujud — berdiri tidak gugur. Ia berdiri memberi isyarat ruku, lalu duduk memberi isyarat sujud. Allah berfirman: "Berdirilah kepada Allah dengan penuh ketaatan." [2:238] Jika keduanya tidak mampu — berisyarat, isyarat sujud lebih rendah dari ruku.',
+tr:'Ayakta durabilip eğilip secde edemeyense — kıyam düşmez. Ayakta rükuya işaret eder, oturarak secdeye işaret eder. Allah buyurur: "Allah için saygıyla ayakta durun." [2:238] Her ikisini de yapamıyorsa — işaret eder; secde işareti rüku işaretinden daha alçak olur.'
+})},
+{type:'rule',text:T({
+ar:'ومن لم يقدر على الإيماء برأسه كفاه النية والقول. ولا تسقط عنه الصلاة ما دام عقله ثابتاً بأي حال من الأحوال. ومتى قدر المريض في أثناء الصلاة على ما كان عاجزاً عنه ـ من قيام أو قعود أو ركوع أو سجود أو إيماء ـ انتقل إليه، وبنى على ما مضى من صلاته.',
+en:'Whoever cannot even nod his head — intention and verbal recitation suffice. Prayer is NEVER waived as long as the person is mentally sound, under any circumstances. Whenever the patient becomes able during prayer to do what he was previously unable to do — standing, sitting, bowing, prostrating, or indicating — he transitions to it and continues his prayer from where he was.',
+ur:'جو سر سے اشارہ بھی نہ کر سکے — نیت اور قول کافی ہیں۔ جب تک عقل سلامت ہے کسی بھی حال میں نماز معاف نہیں۔ اگر نماز کے دوران مریض کسی چیز پر قادر ہو جائے جس سے عاجز تھا — قیام، قعود، رکوع، سجدہ یا اشارہ — تو اسی پر منتقل ہو جائے اور پچھلی نماز پر بنا کرے۔',
+fa:'کسی که حتی نمی‌تواند با سر اشاره کند — نیت و گفتار کافی است. نماز هرگز از او ساقط نمی‌شود تا عقلش سالم است. هر وقت در اثنای نماز بر چیزی قادر شد که قبلاً نمی‌توانست — انتقال می‌دهد و بر آنچه گذشته بنا می‌کند.',
+fr:'Qui ne peut même pas hocher la tête — l\'intention et le dit suffisent. La prière n\'est JAMAIS levée tant que l\'esprit est sain. Si, en cours de prière, le patient retrouve une capacité perdue — il l\'adopte et continue sa prière.',
+hi:'जो सर से भी इशारा न कर सके — नीयत और क़ौल काफी हैं। जब तक अक़्ल सलामत है नमाज़ किसी भी हाल में माफ नहीं। अगर नमाज़ के दौरान मरीज़ किसी चीज़ पर क़ादिर हो जाए जिससे आजिज़ था — उसी पर जाए और पिछली नमाज़ पर बिना करे।',
+bn:'যে মাথার ইশারাও করতে পারে না — নিয়ত ও মৌখিক আদায় যথেষ্ট। যতক্ষণ বিবেক সুস্থ আছে নামায কখনো মাফ নয়। নামাযের মধ্যে যদি রোগী সক্ষম হয়ে যায় — কিয়াম, কুঊদ, রুকু, সিজদা বা ইশারায় — তখন সেটা করবে এবং আগের উপর বিনা করবে।',
+id:'Yang tidak bisa mengangguk — niat dan ucapan sudah cukup. Shalat TIDAK PERNAH gugur selama akalnya sehat. Jika sewaktu shalat pasien mampu melakukan yang sebelumnya tidak bisa — ia beralih dan melanjutkan shalatnya.',
+ms:'Yang tidak boleh mengangguk — niat dan ucapan sudah mencukupi. Solat TIDAK PERNAH gugur selagi akalnya sihat. Jika sewaktu solat pesakit mampu melakukan yang sebelumnya tidak boleh — ia beralih dan meneruskan solatnya.',
+tr:'Baş sallayamayanın — niyet ve söz yeterlidir. Aklı başında olduğu sürece namaz hiçbir zaman düşmez. Namaz sırasında hasta daha önce yapamadığını yapabilir hale gelirse — kıyam, oturma, rüku, secde veya işaret — oraya geçer ve namazına devam eder.'
+})},
+{type:'hadith',text:T({
+ar:'وإذا نام المريض أو غيره عن صلاة أو نسيها وجب عليه أن يصليها حال استيقاظه عن النوم، أو حال ذكره لها، ولا يجوز له تركها إلى دخول وقت مثلها ليصليها فيه لقوله ﷺ: «من نام عن صلاة أو نسيها فليصلها متى ذكرها، لا كفارة لها إلا ذلك» وتلا قوله تعالى: ﴿وَأَقِمِ الصَّلَاةَ لِذِكْرِي﴾ [طه: ١٤]',
+en:'If the patient or anyone sleeps through a prayer or forgets it — he must pray it immediately upon waking or remembering. He may not leave it until the same prayer\'s next time. The Prophet ﷺ said: "Whoever sleeps through a prayer or forgets it, let him pray it when he remembers — there is no expiation except that." Then he recited: ❝Establish prayer for My remembrance.❞ [Ta-Ha: 14]',
+ur:'اگر مریض یا کوئی بھی نماز سے سو جائے یا بھول جائے — بیداری یا یادآوری پر فوراً پڑھے۔ اگلی بار تک چھوڑنا جائز نہیں۔ آپ ﷺ نے فرمایا: «جو نماز سے سو جائے یا بھول جائے، جب یاد آئے پڑھے، اس کا کفارہ بس یہی ہے» اور یہ آیت تلاوت کی: ﴿میری یاد کے لیے نماز قائم کرو﴾ [طہ:14]',
+fa:'اگر بیمار یا هر کسی نمازی را بخواهد یا فراموش کند — با بیداری یا یادآوری فوری باید بخواند. نمی‌تواند تا وقت آن نماز صبر کند. پیامبر ﷺ فرمود: «هرکس نماز را بخواهد یا فراموش کند، هروقت یادش آمد بخواند» و تلاوت کرد: ﴿نماز را برای یاد من برپا دار﴾ [طه:14]',
+fr:'Si le malade ou quiconque dort pendant la prière ou l\'oublie — il la prie dès le réveil ou le souvenir. Il ne peut l\'abandonner jusqu\'au prochain moment. Le Prophète ﷺ dit : « Qui dort ou oublie une prière, qu\'il la prie quand il s\'en souvient. » Et il récita : ❝Établis la prière en Mon souvenir.❞ [20:14]',
+hi:'अगर मरीज़ या कोई भी नमाज़ से सो जाए या भूल जाए — जागते या याद आते ही पढ़े। अगली बार तक छोड़ना जायज़ नहीं। नबी ﷺ ने फरमाया: «जो नमाज़ से सो जाए या भूल जाए, याद आते ही पढ़े» और ये आयत पढ़ी: ❝मेरी याद के लिए नमाज़ क़ायम करो।❞ [ताहा:14]',
+bn:'রোগী বা যেকোনো ব্যক্তি যদি নামায থেকে ঘুমিয়ে পড়ে বা ভুলে যায় — জাগা বা স্মরণ হওয়ার সাথে সাথে পড়বে। পরবর্তী সময় পর্যন্ত রাখা যাবে না। নবী ﷺ বললেন: «যে ঘুমিয়ে বা ভুলে যায়, মনে হলেই পড়ুক» এবং পড়লেন: ❝আমার স্মরণে নামায কায়েম করো।❞ [তা-হা:১৪]',
+id:'Jika pasien atau siapa pun tertidur melewati shalat atau melupakannya — ia shalat segera setelah bangun atau ingat. Tidak boleh menunda ke waktu berikutnya. Nabi ﷺ bersabda: "Siapa tidur atau lupa shalat, hendaklah ia shalat ketika ingat." Dan beliau membaca: ❝Dirikanlah shalat untuk mengingat-Ku.❞ [20:14]',
+ms:'Jika pesakit atau sesiapa terlewat solat atau terlupa — ia solat sejurus bangun atau ingat. Tidak boleh ditangguhkan ke waktu berikutnya. Nabi ﷺ bersabda: "Sesiapa yang tidur atau terlupa solat, hendaklah dia solat ketika ingat." Dan baginda membaca: ❝Dirikanlah solat untuk mengingati-Ku.❞ [20:14]',
+tr:'Hasta veya herhangi biri bir namazı uyuyarak geçirirse ya da unutursa — uyanınca veya hatırlayınca hemen kılar. Bir sonraki vaktine bırakamaz. Peygamber ﷺ buyurdu: "Uyuyarak veya unutarak geçiren hatırladığında kılsın." Ve şu ayeti okudu: ❝Beni anmak için namaz kıl.❞ [20:14]'
+})}
+]}
